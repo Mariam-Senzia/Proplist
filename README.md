@@ -46,14 +46,14 @@ Run the following commands to set up the database and perform migrations:
     - Update User: PUT /users/<user_id>
     - Delete User: DELETE /users/<user_id>
 
-Properties:
+- Properties:
     - Create Property: POST /properties
     - Get All Properties: GET /properties
     - Get Property by ID: GET /properties/<property_id>
     - Update Property: PUT /properties/<property_id>
     - Delete Property: DELETE /properties/<property_id>
 
-Reviews:
+- Reviews:
     - Create Review: POST /reviews
     - Get All Reviews: GET /reviews
     - Get Review by ID: GET /reviews/<review_id>
