@@ -20,21 +20,22 @@ const Navbar = () => {
                             marginRight: '4px',
                             borderRadius: '50%',
                         }}
+                        className='logo'
                     />
-                    <Heading as="h1" size="lg" fontWeight="bold" color="#48ADA9">
+                    <Heading as="h1" size="lg" fontWeight="bold" color="#48ADA9" className='header'>
                         Proplist
                     </Heading>
                 </Flex>
 
                 {/* Navigation Links and Buttons */}
-                <Flex align="center" className='home' marginRight="10rem">
+                <Flex align="center" className='nav' marginRight="10rem">
                     <Link to="/" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#333333" fontWeight="500" _hover={{ color: 'teal' }} marginRight="4.5rem">
+                        <Text variant="ghost" color="#333333" fontWeight="500" _hover={{ color: 'teal' }} className="home" marginRight="4.5rem">
                             Home
                         </Text>
                     </Link>
                     <Link to="/services" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#333333" fontWeight="500" _hover={{ color: 'teal' }} marginRight="3.5rem">
+                        <Text variant="ghost" color="#333333" fontWeight="500" _hover={{ color: 'teal' }} className="services" marginRight="3.5rem">
                             Services
                         </Text>
                     </Link>
@@ -43,9 +44,9 @@ const Navbar = () => {
                             Sign In
                         </Text>
                     </Link>
-                    <Link to="/signup" style={{ textDecoration: 'none' }}>
+                    <Link to="/contact" style={{ textDecoration: 'none' }}>
                         <Text variant="ghost" color="#333333" fontWeight="500" ml={4} className='sign-up' _hover={{ color: 'teal' }} marginRight="3.8rem">
-                            Sign Up
+                            Contact
                         </Text>
                     </Link>
 
@@ -61,6 +62,7 @@ const Navbar = () => {
                         fontSize="20px"
                         onClick={toggleColorMode}
                         _hover={{ color : "teal" }}
+                        className='toggle'
                     />
                 </Flex>
             </Flex>

@@ -7,6 +7,7 @@ import SignUp from './components/SignUp';
 import Home from './components/Home';
 import ForSale from './components/ForSale';
 import PropertyList from './components/PropertyList';
+import PropertyDetails from './components/PropertyDetails';
 import Services from './components/Services';
 import theme from './components/Theme';
 
@@ -20,6 +21,7 @@ function App() {
       .then((data) => setProperties(data));
   }, []);
 
+  // console.log(properties)
   const handleNewProperty = (newProperty) => {
     setSellProperties([...sellProperties, newProperty]);
   };
@@ -42,6 +44,8 @@ function App() {
             <Route path="/ForSale" element={<ForSale onNewProperty={handleNewProperty} />} />
 
             <Route path="/PropertyList" element={<PropertyList properties={properties} />} />
+
+            <Route path="/PropertyDetails/:title" element={<PropertyDetails properties={properties}/>} />
           </Routes>
         </Box>
       </Router>

@@ -62,9 +62,9 @@ const SignUp = () => {
   };
 
   return (
-    <Box height="91.3vh"  mt='1rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} >
-    <Box maxW="md" mx="auto" p={4}>
-      <Heading as="h2" size="lg" color="teal" textAlign="center" marginTop="3rem">
+    <Box height="91.3vh"  mt='1rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} display='flex'> 
+    <Box maxW="md" mx="auto" p={5} bgColor='white' width='100%' mt='3rem' mb='3rem' ml='35rem' borderRadius='10px'>
+      <Heading as="h2" size="lg" color="teal" textAlign="center" marginTop="1rem">
       Sign Up
     </Heading>
       <form onSubmit={handleSubmit}>

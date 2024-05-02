@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Heading, Text, Button } from '@chakra-ui/react';
 import AboutUs from './AboutUs';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   
@@ -9,6 +10,7 @@ const Home = () => {
     <>
     {/* image */}
     <Box
+      display='flex'
       textAlign="center"
       mt={4}
       mr="-3.25rem"
@@ -17,7 +19,8 @@ const Home = () => {
       backgroundSize='cover'
       backgroundPosition='center'
       minHeight='70vh'
-      filter="brightness(50%)"
+      // filter="brightness(50%)"
+      
     >
 
       {/* Background image layer */}
@@ -34,17 +37,19 @@ const Home = () => {
       /> */}
 
        {/* Welcome message */}
-       <Box p={8} className='about-us' ml="33rem" mt="1rem" mb="3rem" textAlign={'center'} color='white' width='35%' >
-          <Heading as="h2" size="xl" mt='8rem'>
+       <Box p={3} className='about-us' ml="35rem" mt="10rem" mb="8rem" textAlign={'center'} color='' width='30%' bgColor='#EBE9E9' borderRadius='10px'>
+          <Heading as="h2" size="xl" mt='1rem' mb='0.5rem'>
               Welcome to PropList!
           </Heading>
-          <Text fontSize="lg" mb={4}>
+          <Text fontSize="lg" mb={5}>
               We are your premier destination for all things related to real estate.
               Whether you're buying, selling, or looking for information, we've got you covered.
           </Text>
+          <Link to='/PropertyList'>
           <Button colorScheme="teal" size="md">
-              Learn More
+              Explore Listings
           </Button>
+          </Link>
         </Box>
     </Box>
 

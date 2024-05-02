@@ -10,7 +10,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
-# app.config['STATIC_FOLDER'] = 'uploads'
 app.json.compact = False
 
 migrate = Migrate(app, db)
@@ -136,7 +135,7 @@ def create_property():
 @app.route('/properties', methods=['GET'])
 def get_properties():
     properties = Property.query.all()
-    return jsonify([{'id': property.id, 'title': property.title, 'image_url': property.image_url, 'description': property.description, 'location': property.location, 'property_type': property.property_type, 'price': property.price} for property in properties])
+    return jsonify([{'id': property.id, 'title': property.title, 'image_url': property.image_url, 'description': property.description, 'location': property.location, 'property_type': property.property_type, 'price': property.price,'bedrooms': property.bedrooms,'bathrooms' : property.bathrooms,'total_interior' : property.total_interior,'parking' : property.parking,'lot_size' : property.lot_size,'type_style' : property.type_style,'year_built' : property.year_built,'property_condition' : property.property_condition,'security' : property.security,'flooring' : property.flooring,'whats_special' : property.whats_special,'accessibility' : property.accessibility,'topography' : property.topography,'zoning' : property.zoning,'utilities' : property.utilities,'investment_potential' : property.investment_potential,'office_space' : property.office_space,'amenities' : property.amenities,'warehouse_size' : property.warehouse_size,'loading_docks' : property.loading_docks} for property in properties])
 
 @app.route('/properties/<int:id>', methods=['GET'])
 def get_property(id):

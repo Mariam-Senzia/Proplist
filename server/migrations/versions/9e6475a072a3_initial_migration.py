@@ -1,8 +1,8 @@
 """Initial migration
 
-Revision ID: f7aeec007bde
+Revision ID: 9e6475a072a3
 Revises: 
-Create Date: 2024-04-28 07:05:35.605394
+Create Date: 2024-05-01 12:02:34.000759
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f7aeec007bde'
+revision = '9e6475a072a3'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -26,6 +26,25 @@ def upgrade():
     sa.Column('location', sa.String(), nullable=True),
     sa.Column('property_type', sa.Text(), nullable=False),
     sa.Column('price', sa.Integer(), nullable=False),
+    sa.Column('bedrooms', sa.Integer(), nullable=True),
+    sa.Column('bathrooms', sa.Integer(), nullable=True),
+    sa.Column('total_interior', sa.String(), nullable=True),
+    sa.Column('parking', sa.String(), nullable=True),
+    sa.Column('lot_size', sa.String(), nullable=True),
+    sa.Column('type_style', sa.String(), nullable=True),
+    sa.Column('year_built', sa.Integer(), nullable=True),
+    sa.Column('property_condition', sa.String(), nullable=True),
+    sa.Column('security', sa.String(), nullable=True),
+    sa.Column('flooring', sa.String(), nullable=True),
+    sa.Column('whats_special', sa.String(), nullable=True),
+    sa.Column('accessibility', sa.String(), nullable=True),
+    sa.Column('zoning', sa.String(), nullable=True),
+    sa.Column('utilities', sa.String(), nullable=True),
+    sa.Column('investment_potential', sa.String(), nullable=True),
+    sa.Column('office_space', sa.String(), nullable=True),
+    sa.Column('amenities', sa.String(), nullable=True),
+    sa.Column('warehouse_size', sa.String(), nullable=True),
+    sa.Column('loading_docks', sa.String(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('users',
@@ -34,6 +53,8 @@ def upgrade():
     sa.Column('email', sa.String(), nullable=True),
     sa.Column('phone_number', sa.Integer(), nullable=True),
     sa.Column('message', sa.Text(), nullable=True),
+    sa.Column('property_id', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['property_id'], ['properties.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('reviews',

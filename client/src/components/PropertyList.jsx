@@ -3,6 +3,7 @@ import { Box,Heading,Card, CardBody, Stack, Image, ButtonGroup, Divider, CardFoo
 import InitialFocus from './RequestModal';
 import SearchBar from './SearchBar';
 import "./property.css"
+import { Link } from 'react-router-dom';
 
 
 function PropertyList({properties}){
@@ -19,6 +20,7 @@ function PropertyList({properties}){
                 return <GridItem key={prop.id}>
                     <Card maxW='sm' className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} >
                     <CardBody>
+                      <Link to={`/PropertyDetails/${prop.title}`}>
                         <Image
                         src={prop.image_url}
                         alt='Green double couch with wooden legs'
@@ -27,6 +29,7 @@ function PropertyList({properties}){
                         height='200px'
                         objectFit='cover'
                         />
+                      </Link>
                         <Stack mt='6' spacing='3'>
                         <Heading size='md'>{prop.title}</Heading>
                         <Text>

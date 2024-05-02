@@ -9,6 +9,7 @@ import {
   Heading,
   Text,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -24,9 +25,9 @@ const SignIn = () => {
     };
 
   return (
-    <Box height="91.3vh"  mt='1rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} >
-    <Box maxW="" mx="" p='7rem' mt="rem" borderWidth={'px'}  width="40%" ml="32%" mb="1remm" borderRadius={'10px'}>
-      <Heading as="h2" size="lg" color="#00B8B1" textAlign="center" marginTop="4.5rem">
+    <Box height="91.3vh"  mt='1rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} display={'flex'}>
+    <Box maxW="" mx="" p='2rem' mt="8rem" borderWidth={'px'}  width="30%" ml="36%" mb="10rem" borderRadius={'10px'} bgColor={'white'}>
+      <Heading as="h2" size="lg" color="#00B8B1" textAlign="center" marginTop="1rem">
         Sign In
       </Heading>
       <form onSubmit={handleSignIn}>
@@ -79,11 +80,11 @@ const SignIn = () => {
           {/* Prompt to sign up */}
           <Text fontSize="sm" color="gray.600" textAlign="center" mt={2}>
             Don't have an account?{' '}
-            {/* <Link to="/signup" textDecoration={'none'}> */}
+            <Link to="/signup" textDecoration={'none'}>
               <Button color="teal" variant="link" >
                 Sign Up
               </Button>
-            {/* </Link> */}
+            </Link>
           </Text>
         </Stack>
       </form>
