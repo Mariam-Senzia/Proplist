@@ -18,6 +18,7 @@ class User(db.Model):
     email = db.Column(db.String, nullable=True)
     phone_number = db.Column(db.Integer)
     message = db.Column(db.Text, nullable=True)
+    password = db.Column(db.Text)
     property_id = db.Column(db.Integer, db.ForeignKey('properties.id'))
 
     reviews = db.relationship('Review', backref='user',cascade="all, delete-orphan")

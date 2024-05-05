@@ -8,9 +8,10 @@ const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
 
     return (
-        <Box bg="" color="black" py={2} px={10} w="100%" position="fixed" zIndex="100" top="0" left="0" right="0">
+        <Box bg="black" color="white" py={2} px={10} w="100%" position="fixed" zIndex="100" top="0" left="0" right="0">
             <Flex justify="space-between" align="center">
                 {/* Logo and Title */}
+              <Link to='/'>
                 <Flex align="center" marginLeft="10rem">
                     <img
                         src="https://i.pinimg.com/564x/bf/a7/fa/bfa7facf2e2401401f19b17824fc17c0.jpg"
@@ -26,26 +27,27 @@ const Navbar = () => {
                         Proplist
                     </Heading>
                 </Flex>
+              </Link>
 
                 {/* Navigation Links and Buttons */}
                 <Flex align="center" className='nav' marginRight="10rem">
                     <Link to="/" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#333333" fontWeight="500" _hover={{ color: 'teal' }} className="home" marginRight="4.5rem">
+                        <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: 'teal' }} className="home" marginRight="4.5rem">
                             Home
                         </Text>
                     </Link>
                     <Link to="/services" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#333333" fontWeight="500" _hover={{ color: 'teal' }} className="services" marginRight="3.5rem">
+                        <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: 'teal' }} className="services" marginRight="3.5rem">
                             Services
                         </Text>
                     </Link>
                     <Link to="/signin" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#333333" fontWeight="500" ml={4} className='sign-in' _hover={{ color: 'teal' }} marginRight="3.5rem">
+                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='sign-in' _hover={{ color: 'teal' }} marginRight="3.5rem">
                             Sign In
                         </Text>
                     </Link>
                     <Link to="/contact" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#333333" fontWeight="500" ml={4} className='sign-up' _hover={{ color: 'teal' }} marginRight="3.8rem">
+                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='sign-up' _hover={{ color: 'teal' }} marginRight="3.8rem">
                             Contact
                         </Text>
                     </Link>
@@ -58,7 +60,7 @@ const Navbar = () => {
                         aria-label="Toggle dark mode"
                         icon={colorMode === 'dark' ? <FiSun /> : <FiMoon />}
                         variant="ghost"
-                        color="#333333"
+                        color="white"
                         fontSize="20px"
                         onClick={toggleColorMode}
                         _hover={{ color : "teal" }}

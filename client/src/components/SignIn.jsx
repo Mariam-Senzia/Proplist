@@ -25,7 +25,7 @@ const SignIn = () => {
     };
 
   return (
-    <Box height="91.3vh"  mt='1rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} display={'flex'}>
+    <Box height="91.5vh"  mt='0.9rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} display={'flex'}>
     <Box maxW="" mx="" p='2rem' mt="8rem" borderWidth={'px'}  width="30%" ml="36%" mb="10rem" borderRadius={'10px'} bgColor={'white'}>
       <Heading as="h2" size="lg" color="#00B8B1" textAlign="center" marginTop="1rem">
         Sign In

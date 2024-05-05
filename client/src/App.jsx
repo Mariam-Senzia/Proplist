@@ -10,6 +10,7 @@ import PropertyList from './components/PropertyList';
 import PropertyDetails from './components/PropertyDetails';
 import Services from './components/Services';
 import theme from './components/Theme';
+import Contact from './components/Contact';
 
 function App() {
   const [sellProperties, setSellProperties] = useState([]);
@@ -40,6 +41,8 @@ function App() {
 
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
+
+            <Route path="/contact" element={<Contact />} />
 
             <Route path="/ForSale" element={<ForSale onNewProperty={handleNewProperty} />} />
 

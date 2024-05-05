@@ -1,54 +1,52 @@
 import React from 'react';
-import { Box, Text, Flex, Link, Icon, Spacer } from '@chakra-ui/react';
-import { FaHome, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { Box, Text, Flex, Link, Icon } from '@chakra-ui/react';
+import { FaEnvelope, FaPhone , FaLinkedin, FaTwitter,FaInstagram} from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <Box className='footer' as="footer" bg="teal.600" color="white" py={10} px="" w="78.5%" marginBottom="-3.3rem" marginRight="" marginLeft="9.5rem">
+        <>
+        <Box className='footer' as="footer" bg="teal.600" color="white" height='25vh'  w="109.3%" marginBottom="-3.3rem" marginRight="" marginLeft="-5rem">
             <Flex
                 justify="space-between"
-                align="center"
-                maxW="container.lg"
+                maxW="12rem"
                 mx="auto"
-                px={8}
-                height="100%"
+                p={'1rem'}
             >
-                {/* Logo or icon */}
-                <Icon as={FaHome} boxSize={8} />
+                {/* Social links */}
+                <Icon as={FaLinkedin} boxSize={7} />
 
-                {/* Footer text */}
-                <Text fontSize="sm" textAlign="center" flex="1" mt={{ base: 4, md: 0 }}>
-                    &copy; {new Date().getFullYear()} Proplist Real Estate Platform. All rights reserved.
-                </Text>
+                <Icon as={FaTwitter} boxSize={7} />
 
-                {/* Navigation links */}
-                <Flex align="center">
-                    {/* Social links */}
-                    <Link href="mailto:info@example.com" mx={2} fontSize="lg" color="white" textDecoration="none">
-                        <Icon as={FaEnvelope} mr={1.5} />
-                        Email
-                    </Link>
-                    <Link href="tel:+1234567890" mx={2} fontSize="lg" color="white" textDecoration="none">
-                        <Icon as={FaPhone} mr={1.5} />
-                        Call Us
-                    </Link>
-
-                    {/* Additional links */}
-                    <Link href="/about" mx={2} color="white" textDecoration="none">
-                        About Us
-                    </Link>
-                    <Link href="/services" mx={2} color="white" textDecoration="none">
-                        Services
-                    </Link>
-                    <Link href="/contact" mx={2} color="white" textDecoration="none">
-                        Contact Us
-                    </Link>
-
-                    {/* Spacer to push content to the left */}
-                    <Spacer />
-                </Flex>
+                <Icon as={FaInstagram} boxSize={7} />
             </Flex>
+
+            {/* Contact */}
+            <Flex align="center" justify="space-between"
+                maxW="27rem"
+                mx="auto"
+                p={'1rem'}>
+                <Link href="tel:+254718643206" ml={'7'} fontSize="lg" color="white" textDecoration="none">
+                    <Icon as={FaPhone} mr={'0.5rem'} />
+                        +254718643206
+                </Link>    
+                <Link href="mailto:proplist@gmail.com" ml={''} fontSize="lg" color="white" textDecoration="none">
+                    <Icon as={FaEnvelope} mr={'0.5rem'} />
+                        proplist@gmail.com 
+                </Link>
+
+                </Flex>
+
+                <Text ml='45rem'>Nairobi, Kenya</Text>
+
+                <Box>
+                {/* Footer text*/}
+                        <Text fontSize="sm" textAlign="center" mt='2rem' bg='black' p='1rem'>
+                            &copy; {new Date().getFullYear()} Proplist Real Estate Platform. All rights reserved.
+                        </Text> 
+                </Box>
+
         </Box>
+    </>
     );
 };
 

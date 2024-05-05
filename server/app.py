@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import db, User, Property, Review
 from flask_cors import CORS
+from flask_bcrypt import Bcrypt
 import os
 
 
@@ -15,6 +16,7 @@ app.json.compact = False
 migrate = Migrate(app, db)
 db.init_app(app)
 CORS(app)
+bcrypt = Bcrypt(app)
 
 # Configure Flask to serve static files from the 'uploads' directory
 app.static_folder = app.config['UPLOAD_FOLDER']
@@ -216,6 +218,11 @@ def delete_review(id):
         return jsonify({'message': 'Review deleted successfully'})
     else:
         return jsonify({'message': 'Review not found'}), 404
+
+
+# User authentication
+# register user
+
 
 
 if __name__ == "__main__":
