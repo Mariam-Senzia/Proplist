@@ -12,25 +12,53 @@ import {
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
-    const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+  // input change
+  const handleInputChange = (e) => {
+    e.preventDefault()
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+      })
+  }
 
-  const handleSignIn = (e) => {
+  // form submission
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-   
-    setEmail('');
-    setPassword('');
+    
+    fetch("http://127.0.0.1:5555/login",{
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData),
+    })
+    .then((res) => {
+      if (res.ok){
+        setFormData({
+          email: "",
+          password: "",
+        });
+        // alert(Login Successful!");
+      } else {
+        throw new Error("Failed to submit form.");
+      }
+    })
+    // .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
     };
 
   return (
     <Box height="91.5vh"  mt='0.9rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} display={'flex'}>
+
     <Box maxW="" mx="" p='2rem' mt="8rem" borderWidth={'px'}  width="30%" ml="36%" mb="10rem" borderRadius={'10px'} bgColor={'white'}>
       <Heading as="h2" size="lg" color="#00B8B1" textAlign="center" marginTop="1rem">
         Sign In
       </Heading>
-      <form onSubmit={handleSignIn}>
+      <form onSubmit={handleSubmit}>
         <Stack spacing={4}>
           <FormControl>
             <FormLabel
@@ -46,9 +74,9 @@ const SignIn = () => {
             </FormLabel>
             <Input
               type="email"
-              id="email"
-              value={email}
-            //   onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
               required
             />
           </FormControl>
@@ -66,9 +94,9 @@ const SignIn = () => {
             </FormLabel>
             <Input
               type="password"
-              id="password"
-              value={password}
-            //   onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
               required
             />
           </FormControl>

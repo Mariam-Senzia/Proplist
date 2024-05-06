@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response, jsonify,url_for
+from flask import Flask, request, make_response, jsonify,url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import db, User, Property, Review
@@ -11,6 +11,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
+# cookies seesions
+app.secret_key = "abcdefgh"
 app.json.compact = False
 
 migrate = Migrate(app, db)
@@ -85,7 +87,7 @@ def update_user(id):
     else:
         return jsonify({'message': 'User not found'}), 404
 
-@app.route('/users/<int:id>', methods=['DELETE'])
+@app.route('/delete_user/<int:id>', methods=['DELETE'])
 def delete_user(id):
     user = User.query.get(id)
     if user:
@@ -222,6 +224,56 @@ def delete_review(id):
 
 # User authentication
 # register user
+@app.route('/register', methods=['POST'])
+def register_user():
+    form_data = request.get_json()
+    user_name = form_data.get('name')
+    user_email = form_data.get('email')
+    user_password = form_data.get('password')
+    # name = request.json.get('fullName')
+    # email = request.json.get('email')
+    # password = request.json.get('password')
+
+    user_exists = User.query.filter_by(email = user_email).first()
+
+    if user_exists:
+        return jsonify({'error': 'User already exists'})
+    
+    hashed_password = bcrypt.generate_password_hash(user_password)
+
+    new_user = User(
+        name = user_name,
+        email = user_email,
+        password = hashed_password
+    )
+
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify({"id": new_user.id,"name": new_user.name,"email": new_user.email })
+
+
+#login user
+@app.route('/login',methods=['POST'])
+def login():
+    email = request.json.get('email')
+    password = request.json.get('password')
+
+    user = User.query.filter_by(email = email).first()
+
+    if not User:
+        return jsonify({"error": "unauthorized"}), 401
+    
+    if not bcrypt.check_password_hash(user.password, password):
+        return jsonify({"error": "unauthorized"}),401
+    
+    # cookies server sessions
+    session['user_id'] = user.id
+
+    return jsonify({
+        "id": user.id,
+        "email": user.email
+    })
 
 
 
