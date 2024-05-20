@@ -1,10 +1,12 @@
 from flask import Flask, request, make_response, jsonify,url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from models import db, User, Property, Review
+from models import db, User, Property, Review, Image
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 import os
+import cloudinary
+import cloudinary.uploader
 
 
 app = Flask(__name__)
@@ -27,6 +29,15 @@ app.static_folder = app.config['UPLOAD_FOLDER']
 upload_folder = app.config['UPLOAD_FOLDER']
 if not os.path.exists(upload_folder):
     os.makedirs(upload_folder)
+
+#cloudinary config
+import cloudinary
+          
+cloudinary.config( 
+  cloud_name = "dqgwkixif", 
+  api_key = "865799727479877", 
+  api_secret = "1r484edxckpzuk19eDXcbJvhMhc" 
+)
 
 @app.route('/')
 def index():
@@ -108,6 +119,12 @@ def create_property():
         location = request.form.get('location')
         property_type = request.form.get('property_type')
         image_file = request.files.get('image')
+        bedrooms = request.form.get('beds')
+        bathrooms = request.form.get('baths')
+        amenities = request.form.get('amenities')
+        whats_special = request.form.get('whats_special')
+        additional_images = request.files.getlist('additional_images') # more images
+
         # print(f"Received image file: {image_file}") # Debugging line
 
         if not image_file:
@@ -126,9 +143,34 @@ def create_property():
             location=location,
             price=price,
             property_type=property_type,
-            image_url=image_url
+            image_url=image_url,
+            bedrooms=bedrooms,
+            bathrooms=bathrooms,
+            amenities=amenities,
+            whats_special=whats_special
         )
         db.session.add(new_property)
+        db.session.commit()
+
+        # Remove the main image from the list of additional images
+        if image_file in additional_images:
+            additional_images.remove(image_file)
+
+
+        # Verify additional images
+        print(f"Number of additional images: {len(additional_images)}")
+        if not additional_images:
+            return jsonify({'message': 'No additional images provided'}), 400
+
+
+        # uploading additional_images[] to cloudinary
+        for image in additional_images:
+            image_upload = cloudinary.uploader.upload(image)
+            url = image_upload['secure_url']
+            
+            # add to db
+            new_image = Image(property_id = new_property.id, url=url)
+            db.session.add(new_image)
         db.session.commit()
 
         return jsonify({'message': 'Property created successfully'}),201
@@ -139,7 +181,7 @@ def create_property():
 @app.route('/properties', methods=['GET'])
 def get_properties():
     properties = Property.query.all()
-    return jsonify([{'id': property.id, 'title': property.title, 'image_url': property.image_url, 'description': property.description, 'location': property.location, 'property_type': property.property_type, 'price': property.price,'bedrooms': property.bedrooms,'bathrooms' : property.bathrooms,'total_interior' : property.total_interior,'parking' : property.parking,'lot_size' : property.lot_size,'type_style' : property.type_style,'year_built' : property.year_built,'property_condition' : property.property_condition,'security' : property.security,'flooring' : property.flooring,'whats_special' : property.whats_special,'accessibility' : property.accessibility,'topography' : property.topography,'zoning' : property.zoning,'utilities' : property.utilities,'investment_potential' : property.investment_potential,'office_space' : property.office_space,'amenities' : property.amenities,'warehouse_size' : property.warehouse_size,'loading_docks' : property.loading_docks} for property in properties])
+    return jsonify([{'id': property.id, 'title': property.title, 'image_url': property.image_url, 'description': property.description, 'location': property.location, 'property_type': property.property_type, 'price': property.price,'bedrooms': property.bedrooms,'bathrooms' : property.bathrooms,'whats_special' : property.whats_special,'amenities' : property.amenities} for property in properties])
 
 @app.route('/properties/<int:id>', methods=['GET'])
 def get_property(id):
@@ -222,6 +264,23 @@ def delete_review(id):
         return jsonify({'message': 'Review not found'}), 404
 
 
+# CRUD for Image
+@app.route("/images", methods=["GET"])
+def get_images():
+    images = Image.query.all()
+    return jsonify([{"id": image.id,"property_id": image.property_id,"url": image.url} for image in images])
+
+@app.route("/images/<int:id>", methods=['DELETE'])
+def delete_image(id):
+    image = Image.query.get(id)
+    if image:
+        db.session.delete(image)
+        db.session.commit()
+        return jsonify({'message': 'Image deleted successfully'})
+    else:
+        return jsonify({'message': 'Image not found'}), 404
+    
+
 # User authentication
 # register user
 @app.route('/register', methods=['POST'])
@@ -274,6 +333,29 @@ def login():
         "id": user.id,
         "email": user.email
     })
+
+#upload image to cloudinary
+@app.route("/upload", methods=["POST"])
+def upload_image():
+    if 'file' not in request.files:
+        return jsonify({"error": "No image part"})
+    
+    file = request.files['file']
+    property_id = request.form['property_id']
+
+    if file.filename == '':
+        return jsonify({"error":"No selected file"})
+    
+    result = cloudinary.uploader.upload(file)
+    url = result['secure_url']
+
+    # Create an Image object and add to the db
+    image = Image(property_id=property_id, url=url)
+    db.session.add(image)
+    db.session.commit()
+
+    return jsonify({"property_id": property_id, "url": result['secure_url'] })
+
 
 
 

@@ -4,6 +4,7 @@ import InitialFocus from './RequestModal';
 import SearchBar from './SearchBar';
 import "./property.css"
 import { Link } from 'react-router-dom';
+import Footer from '../home/Footer';
 
 
 function PropertyList({properties}){
@@ -15,7 +16,7 @@ function PropertyList({properties}){
             </Box>
 
 
-            <Grid templateColumns={'repeat(3, minmax(100px , 1fr))'} gap={5} marginLeft={'10rem'} className='prop-card' maxWidth={'1114'} >
+            <Grid templateColumns={'repeat(3, minmax(100px , 1fr))'} gap={5} marginLeft={'10rem'} className='prop-card' maxWidth={'1114'} marginBottom="4rem" >
             {properties.map((prop) => {
                 return <GridItem key={prop.id}>
                     <Card maxW='sm' className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} >
@@ -38,7 +39,7 @@ function PropertyList({properties}){
                         <Text>
                             <span><strong>Location:</strong> </span>{prop.location}
                         </Text>
-                        <Text color='#00A39E' fontSize='2xl'>
+                        <Text color='#EE4266' fontSize='2xl'>
                             {prop.price}
                         </Text>
                         </Stack>
@@ -54,6 +55,9 @@ function PropertyList({properties}){
                 </GridItem>
             })}
             </Grid>
+
+           <Footer />
+            
         </div>
     )
 }

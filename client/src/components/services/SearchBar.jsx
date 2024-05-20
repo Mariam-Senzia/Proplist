@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import { SearchIcon} from "@chakra-ui/icons";
 import {Button,Input,InputGroup,InputLeftElement, Card, CardBody, CardFooter,Stack,Heading,Divider,ButtonGroup, Text,Image,Grid,GridItem} from "@chakra-ui/react"
 import InitialFocus from "./RequestModal";
+import { Link } from "react-router-dom";
 
 function SearchBar({properties}) {
     const [search,setSearch] = useState('');
@@ -21,24 +22,27 @@ function SearchBar({properties}) {
         <div>
             <InputGroup marginTop={"1rem"} >
                 <InputLeftElement pointerEvents="none"  mt="1rem">
-                    <SearchIcon className="searchIcon" color='teal' _placeholder={{ color: 'inherit' }}/>
+                    <SearchIcon className="searchIcon" color='#EE4266' _placeholder={{ color: 'inherit' }}/>
                 </InputLeftElement>
-                <Input variant='flushed' placeholder="Search by (apartment,house,land,commercial)" onChange={displayChange} width={'24vw'} marginRight={'60.9rem'} mt="1rem" color='grey' _placeholder={{ color: 'inherit' }} focusBorderColor='teal.400' />
+                <Input variant='flushed' placeholder="Search by property type" onChange={displayChange} width={'15vw'} marginRight={'69.5rem'} mt="1rem" color='grey' _placeholder={{ color: 'inherit' }} focusBorderColor='#EE4266' />
             </InputGroup> 
 
-            <Grid templateColumns={'repeat(3, minmax(100px , 1fr))'} gap={20} marginLeft={'6rem'} marginTop={'2rem'}>
+
+            <Grid templateColumns={'repeat(3, minmax(100px , 1fr))'} gap={'5'} marginLeft={'rem'} marginTop={'2rem'} className='search-card' maxWidth={'1107'}>
             {filteredProperties.map((prop) => {
                 return <GridItem key={prop.id}>
-                    <Card maxW='sm'>
+                    <Card maxW='sm' borderColor={'#EAEBEB'} textAlign={'center'} mb="2rem">
                     <CardBody>
+                        <Link to={`/PropertyDetails/${prop.title}`}>
                         <Image
                         src={prop.image_url}
                         alt='Green double couch with wooden legs'
                         borderRadius='lg'
-                        width='450px'
-                        height='300px'
+                        width='300px'
+                        height='200px'
                         objectFit='cover'
                         />
+                        </Link>
                         <Stack mt='6' spacing='3'>
                         <Heading size='md'>{prop.title}</Heading>
                         <Text>
@@ -47,17 +51,17 @@ function SearchBar({properties}) {
                         <Text>
                             <span><strong>Location:</strong></span>{prop.location}
                         </Text>
-                        <Text>
+                        {/* <Text>
                             <span><strong>Property Type:</strong></span>{prop.property_type}
-                        </Text>
-                        <Text color='blue.600' fontSize='2xl'>
+                        </Text> */}
+                        <Text color='#EE4266' fontSize='2xl'>
                             {prop.price}
                         </Text>
                         </Stack>
                     </CardBody>
                     <Divider />
                     <CardFooter>
-                        <ButtonGroup spacing='2'>
+                        <ButtonGroup spacing='2' justifyContent={'center'} width="100%">
                             <InitialFocus />
                         </ButtonGroup>
                         

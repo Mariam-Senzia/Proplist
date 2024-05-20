@@ -14,6 +14,7 @@ import {
     Input,
     Textarea,
   } from '@chakra-ui/react'
+  import { useNavigate } from "react-router-dom"
 
 function InitialFocus() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -25,6 +26,8 @@ function InitialFocus() {
     phone: "",
     message: "",
  });
+  const navigate = useNavigate();
+
 
   const handleInputChange = (e) => {
     setFormData({
@@ -51,7 +54,8 @@ function InitialFocus() {
         message: "",
       });
       onClose();
-      alert("Form submitted successfully!");
+      navigate("/SubmitFormMessage")
+      // alert("Form submitted successfully!");
     } else {
       throw new Error("Failed to submit form.");
     }
@@ -64,7 +68,7 @@ function InitialFocus() {
 
   return (
     <>
-      <Button onClick={onOpen} variant='solid' colorScheme='teal'>Request to apply</Button>
+      <Button onClick={onOpen} variant='solid' backgroundColor='#EE4266' color="white"  _hover={{ color: 'white' }} >Request to apply</Button>
 
       <Modal
         initialFocusRef={initialRef}

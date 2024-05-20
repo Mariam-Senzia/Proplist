@@ -12,3 +12,5 @@ flask-cors = "*"
 
 [requires]
 python_version = "3.10"
+
+CLOUDINARY_URL=cloudinary://865799727479877:1r484edxckpzuk19eDXcbJvhMhc@dqgwkixif

@@ -5,7 +5,7 @@ import { FaEnvelope, FaPhone , FaLinkedin, FaTwitter,FaInstagram} from 'react-ic
 const Footer = () => {
     return (
         <>
-        <Box className='footer' as="footer" bg="teal.600" color="white" height='25vh'  w="109.3%" marginBottom="-3.3rem" marginRight="" marginLeft="-5rem">
+        <Box className='footer' as="footer" bg="#282A3E" color="white" height='25vh'  w="109.3%" marginBottom="-3.3rem" marginRight="" marginLeft="-5rem">
             <Flex
                 justify="space-between"
                 maxW="12rem"

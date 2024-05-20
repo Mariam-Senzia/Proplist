@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Heading, Text, Button } from '@chakra-ui/react';
-import AboutUs from './AboutUs';
-import Footer from './Footer';
+import AboutUs from '../components/home/AboutUs';
+import Footer from '../components/home/Footer';
 import { Link } from 'react-router-dom';
+import "./home.css"
 
-const Home = () => {
+const Home = ({properties}) => {
   
   return (
     <>
@@ -19,6 +20,7 @@ const Home = () => {
       backgroundSize='cover'
       backgroundPosition='center'
       minHeight='70vh'
+      className='home-image'
       // filter="brightness(50%)"
       
     >
@@ -37,8 +39,8 @@ const Home = () => {
       /> */}
 
        {/* Welcome message */}
-       <Box p={3} className='about-us' ml="35rem" mt="10rem" mb="8rem" textAlign={'center'} color='' width='30%' bgColor='#EBE9E9' borderRadius='10px'>
-          <Heading as="h2" size="xl" mt='1rem' mb='0.5rem'>
+       <Box p={3} className='welcome-text' ml="35rem" mt="10rem" mb="8rem" textAlign={'center'} color='' width='30%' bgColor='white' borderRadius='10px' >
+          <Heading as="h2" size="xl" mt='1rem' mb='0.5rem' className='welcome'>
               Welcome to PropList!
           </Heading>
           <Text fontSize="lg" mb={5}>
@@ -46,7 +48,7 @@ const Home = () => {
               Whether you're buying, selling, or looking for information, we've got you covered.
           </Text>
           <Link to='/services'>
-          <Button colorScheme="teal" size="md">
+          <Button backgroundColor="#EE4266" color="white" size="md" className='explore-button'>
               Explore Services
           </Button>
           </Link>
@@ -54,7 +56,7 @@ const Home = () => {
     </Box>
 
     {/* About us */}
-    <AboutUs />
+    <AboutUs properties = {properties}/>
 
     {/* footer */}
     <Footer />

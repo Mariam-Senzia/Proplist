@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ChakraProvider, ColorModeScript, Box } from '@chakra-ui/react';
-import Navbar from './components/Navbar';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
-import Home from './components/Home';
-import ForSale from './components/ForSale';
-import PropertyList from './components/PropertyList';
-import PropertyDetails from './components/PropertyDetails';
-import Services from './components/Services';
-import theme from './components/Theme';
-import Contact from './components/Contact';
+import Navbar from './components/home/Navbar';
+import SignIn from './pages/SignIn';
+import SignUp from './components/signin/up/SignUp';
+import Home from './pages/Home';
+import ForSale from './components/services/ForSale';
+import PropertyList from './components/services/PropertyList';
+import PropertyDetails from './components/services/PropertyDetails';
+import Services from './pages/Services';
+import theme from './components/home/Theme';
+import Contact from './pages/Contact';
+import SignInMessage from './components/signin/up/SignInMessage';
+import SignUpMessage from './components/signin/up/SignUpMessage';
+import SubmitFormMessage from './components/submitform/SubmitFormMessage';
+
 
 function App() {
   const [sellProperties, setSellProperties] = useState([]);
   const [properties, setProperties] = useState([]);
+  // global username
+  const [userName, SetUserName] = useState('');
 
   useEffect(() => {
     fetch('http://127.0.0.1:5555/properties')
@@ -35,11 +41,14 @@ function App() {
         
         <Box padding="20px">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home properties={properties} />} />
 
             <Route path="/services" element={<Services />} />
 
+            
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/SignUpMessage" element={<SignUpMessage />}/>
+      
             <Route path="/signin" element={<SignIn />} />
 
             <Route path="/contact" element={<Contact />} />
@@ -49,8 +58,14 @@ function App() {
             <Route path="/PropertyList" element={<PropertyList properties={properties} />} />
 
             <Route path="/PropertyDetails/:title" element={<PropertyDetails properties={properties}/>} />
+
+            <Route path="/SignInMessage" element={<SignInMessage />}/>
+
+            <Route path="/SubmitFormMessage" element={<SubmitFormMessage />}/>
+
           </Routes>
         </Box>
+
       </Router>
     </ChakraProvider>
   );

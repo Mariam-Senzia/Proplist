@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardFooter, Stack, Divider, ButtonGroup, Button, Text, Image, Heading } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import '../App.css'; 
+// import '../App.css'; 
 
 const SellCard = ({ children }) => {
     return (
@@ -33,7 +33,7 @@ const SellCard = ({ children }) => {
                 <CardFooter>
                     <ButtonGroup spacing='2' justifyContent="center" width="100%">
                         <Link to="/ForSale">
-                            <Button variant='solid' colorScheme='teal'>
+                            <Button variant='solid' backgroundColor='#EE4266' color="white">
                                 Sell Now
                             </Button>
                         </Link>

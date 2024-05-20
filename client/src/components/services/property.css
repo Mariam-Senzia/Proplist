@@ -1,11 +1,11 @@
 @media(max-width: 393px){
-    .prop-card{
+    /* .prop-card{
         max-width: 393px;
-    }
+    } */
     .all-cards{
-      width: 60vw;
+      width: 29vw;
       height: 100vh;
-      margin-left: -7.5rem; 
+      margin-left: -12rem;
     }
     .services{
       margin-top: 5rem;

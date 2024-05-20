@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { Box, Button, FormControl, FormLabel, Input, Textarea, Select } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, Textarea, Select, Heading } from '@chakra-ui/react';
+import Footer from '../home/Footer';
+import { useNavigate } from 'react-router-dom';
 
 function ForSale({ onNewProperty }){
     const [formData, setFormData] = useState({
@@ -8,13 +10,24 @@ function ForSale({ onNewProperty }){
     price: '',
     property_type: '',
     location: '',
-    image: null,})
+    image: null,
+    beds:'',
+    baths:'',
+    amenities:'',
+    whats_special:'',
+    additional_images: [],
+})
 
     // Create a reference to the file input
     const fileInputRef = useRef(null);
 
+    // navigate
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        console.log(formData)
 
         const formDataToSend = new FormData();
         formDataToSend.append('title', formData.title);
@@ -23,31 +36,34 @@ function ForSale({ onNewProperty }){
         formDataToSend.append('property_type', formData.property_type);
         formDataToSend.append('location', formData.location);
         formDataToSend.append('image', formData.image);
+        formDataToSend.append('beds', formData.beds);
+        formDataToSend.append('baths', formData.baths);
+        formDataToSend.append('amenities', formData.amenities);
+        formDataToSend.append('whats_special', formData.whats_special);
+        formData.additional_images.forEach((file) => {
+            formDataToSend.append('additional_images', file);
+        })
+        
+
+        // console.log("s,dfjvnskjfv", formDataToSend)
 
         fetch('http://127.0.0.1:5555/properties',{
             method: 'POST',
             body: formDataToSend,
             headers: {
-                'Content-Type': 'multipart/form-data'
+                // 'Content-Type': 'multipart/form-data'
             },
         })
         .then(resp => {
-            // if(!resp.ok){
-            //     throw new Error('Network response was not ok');
-            // }
-            return resp.json();
+            if(!resp.ok){
+                throw new Error('Network response was not ok');
+            }
+            navigate("/SubmitFormMessage")
+            
         })
         .then((data) => {
-            onNewProperty(data);
-            alert('Property submitted successsfully!');
-            setFormData({
-                title: '',
-                description: '',
-                price: '',
-                property_type: '',
-                location: '',
-                image: null,
-            });
+            console.log(data);
+            // onNewProperty(data)
             fileInputRef.current.value = ''; // Clear file input
         })
         .catch((err) => {
@@ -70,12 +86,21 @@ function ForSale({ onNewProperty }){
             image: e.target.files[0]
         });
     };
+
+    // multiple images
+    const handleAdditionalImagesChange = (e) => {
+        setFormData({
+            ...formData,
+            additional_images: Array.from(e.target.files),
+        });
+    }
     
 
     return (
+        <>
         <Box
             // width="100%"
-            height="91.5vh"
+            height="150vh"
             display="flex"
             justifyContent="center"
             alignItems="center"
@@ -96,8 +121,11 @@ function ForSale({ onNewProperty }){
                 borderWidth='1px'
                 backgroundColor={'white'}
             >
-                <form onSubmit={handleSubmit}>
-                    <FormControl id="title" mb="10px">
+                <Heading as="h2" size="lg" color="#EE4266" textAlign="center" >
+                     Sell Your Property
+                </Heading>
+                <form onSubmit={handleSubmit} >
+                    <FormControl id="title" mb="10px" marginTop="1rem">
                         <FormLabel>Title</FormLabel>
                         <Input
                             type="text"
@@ -139,15 +167,18 @@ function ForSale({ onNewProperty }){
                     <FormControl id="type" mb="10px">
                         <FormLabel>Property Type</FormLabel>
                         <Select
-                            name="type"
+                            name="property_type"
                             value={formData.type}
                             onChange={handleChange}
                         >
                             <option value="">Select type</option>
-                            <option value="house">House</option>
                             <option value="apartment">Apartment</option>
-                            <option value="land">Land</option>
-                            <option value="commercial">Commercial</option>
+                            <option value="beach house">Beach House</option>
+                            <option value="bungalow">Bungalow</option>
+                            <option value="cottage">Cottage</option>
+                            <option value="mansion">Mansion</option>
+                            <option value="town house">Town House</option>
+                            <option value="villa">Villa</option>
                         </Select>
                     </FormControl>
 
@@ -162,12 +193,66 @@ function ForSale({ onNewProperty }){
                        
                     </FormControl>
 
-                    <Button type="submit" colorScheme="teal" mt="10px">
+                    <FormControl id="more_images" mb="10px" >
+                        <FormLabel>More Images</FormLabel>
+                        <Input padding={'0.3rem'}
+                            type="file"
+                            name="additional_images"
+                            multiple
+                            onChange={handleAdditionalImagesChange}
+                        />  
+                    </FormControl>
+
+                    <FormControl id="beds" mb="10px" >
+                        <FormLabel>Beds</FormLabel>
+                        <Input padding={'0.3rem'}
+                            type="text"
+                            name="beds"
+                            value={formData.beds}
+                            onChange={handleChange}
+                        />
+                    </FormControl>
+
+                    <FormControl id="baths" mb="10px" >
+                        <FormLabel>Baths</FormLabel>
+                        <Input padding={'0.3rem'}
+                            type="text"
+                            name="baths"
+                            value={formData.baths}
+                            onChange={handleChange}
+                        />
+                    </FormControl>
+
+                    <FormControl id="amenities" mb="10px" >
+                        <FormLabel>Amenities</FormLabel>
+                        <Input padding={'0.3rem'}
+                            type="text"
+                            name="amenities"
+                            value={formData.amenities}
+                            onChange={handleChange}
+                        />
+                    </FormControl>
+
+                    <FormControl id="whats_special" mb="10px" >
+                        <FormLabel>What's Special</FormLabel>
+                        <Input padding={'0.3rem'}
+                            type="text"
+                            name="whats_special"
+                            value={formData.whats_special}
+                            onChange={handleChange}
+                        />  
+                    </FormControl>
+
+
+                    <Button type="submit" backgroundColor="#EE4266" color="white" mt="10px">
                         Submit
                     </Button>
                 </form>
             </Box>
         </Box>
+
+        <Footer />
+        </>
     );
 };
 

@@ -12,9 +12,9 @@ const Navbar = () => {
             <Flex justify="space-between" align="center">
                 {/* Logo and Title */}
               <Link to='/'>
-                <Flex align="center" marginLeft="10rem">
+                <Flex align="center" marginLeft="10rem" >
                     <img
-                        src="https://i.pinimg.com/564x/bf/a7/fa/bfa7facf2e2401401f19b17824fc17c0.jpg"
+                        src="https://i.pinimg.com/736x/b5/b5/8c/b5b58c0abbd7c03eec7d3c4798ef247a.jpg"
                         style={{
                             height: '50px',
                             width: '50px',
@@ -23,31 +23,31 @@ const Navbar = () => {
                         }}
                         className='logo'
                     />
-                    <Heading as="h1" size="lg" fontWeight="bold" color="#48ADA9" className='header'>
+                    <Heading as="h1" size="lg" fontWeight="bold" color="#EF5778" className='header'>
                         Proplist
                     </Heading>
                 </Flex>
               </Link>
 
                 {/* Navigation Links and Buttons */}
-                <Flex align="center" className='nav' marginRight="10rem">
+                <Flex align="center" className='nav' marginRight="10rem" >
                     <Link to="/" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: 'teal' }} className="home" marginRight="4.5rem">
+                        <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="home" marginRight="4.5rem">
                             Home
                         </Text>
                     </Link>
                     <Link to="/services" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: 'teal' }} className="services" marginRight="3.5rem">
+                        <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="services" marginRight="3.5rem">
                             Services
                         </Text>
                     </Link>
                     <Link to="/signin" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='sign-in' _hover={{ color: 'teal' }} marginRight="3.5rem">
+                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='sign-in' _hover={{ color: '#EF5778' }} marginRight="3.5rem">
                             Sign In
                         </Text>
                     </Link>
                     <Link to="/contact" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='sign-up' _hover={{ color: 'teal' }} marginRight="3.8rem">
+                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='contact' _hover={{ color: '#EF5778' }} marginRight="3.8rem">
                             Contact
                         </Text>
                     </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
                         color="white"
                         fontSize="20px"
                         onClick={toggleColorMode}
-                        _hover={{ color : "teal" }}
+                        _hover={{ color : "#EF5778" }}
                         className='toggle'
                     />
                 </Flex>

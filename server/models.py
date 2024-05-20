@@ -1,5 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-# from sqlalchemy import ForeignKey
 
 db = SQLAlchemy()
 
@@ -37,27 +36,22 @@ class Property(db.Model):
     price = db.Column(db.Integer, nullable=False)
     bedrooms = db.Column(db.Integer)
     bathrooms = db.Column(db.Integer)
-    total_interior = db.Column(db.String)
-    parking = db.Column(db.String)
-    lot_size = db.Column(db.String)
-    type_style = db.Column(db.String)
-    year_built = db.Column(db.Integer)
-    property_condition = db.Column(db.String)
-    security = db.Column(db.String)
-    flooring = db.Column(db.String)
     whats_special = db.Column(db.String)
-    topography = db.Column(db.String)
-    accessibility = db.Column(db.String)
-    zoning = db.Column(db.String)
-    utilities = db.Column(db.String)
-    investment_potential = db.Column(db.String)
-    office_space = db.Column(db.String)
     amenities = db.Column(db.String)
-    warehouse_size = db.Column(db.String)
-    loading_docks = db.Column(db.String)
-
-    reviews = db.relationship('Review', backref='property')
+   
+    more_images = db.relationship('Image', backref='property')
+    reviews = db.relationship('Review', backref='property', cascade="all, delete-orphan")
     properties = db.relationship('User', backref='property')
+
+
+class Image(db.Model):
+    __tablename__="images" 
+
+    id = db.Column(db.Integer, primary_key=True)
+    property_id = db.Column(db.Integer, db.ForeignKey('properties.id'))
+    url = db.Column(db.String)
+
+    property_image = db.relationship('Property', backref='images')
 
    
 class Review(db.Model):

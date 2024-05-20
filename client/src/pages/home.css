@@ -1,0 +1,8 @@
+@media(max-width: 393px){
+     .welcome-text{
+        width: 1rem
+     };
+     .explore-button{
+        size:10px;
+     }
+}

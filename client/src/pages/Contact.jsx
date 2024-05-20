@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import { FormControl, Input,Button, Textarea , Box, Heading, Grid,GridItem, Card, CardBody, Text, Stack, Icon} from "@chakra-ui/react";
 import { FaLocationPin, FaPhone, FaEnvelope,FaRegKeyboard } from "react-icons/fa6";
+import Footer from "../components/home/Footer";
+import { useNavigate } from "react-router-dom";
 
 function Contact(){
     // contacts array
@@ -36,6 +38,9 @@ function Contact(){
 
     const initialRef = React.useRef(null)
 
+    // usenavigate
+    const navigate = useNavigate()
+
     
     const handleInputChange = (e) => {
         setFormData({
@@ -61,7 +66,8 @@ function Contact(){
             phone: "",
             message: "",
           });
-          alert("Form submitted successfully!");
+          navigate("/SubmitFormMessage")
+        //   alert("Form submitted successfully!");
         } else {
           throw new Error("Failed to submit form.");
         }
@@ -72,7 +78,7 @@ function Contact(){
 
     return (
         <>
-            <Box display='flex' justifyContent=''>
+            <Box display='flex' justifyContent='' mb="">
             <Grid templateColumns={'repeat(2, minmax(100px , 1fr))'} gap={5} marginLeft={'18rem'} className='contact-card' maxWidth={'25rem'} marginTop={'11rem'}>
             {contacts.map((cont) => {
                 return <GridItem key={cont.title}>
@@ -155,6 +161,10 @@ function Contact(){
                     Submit
                     </Button>
                 </form>
+          </Box>
+        
+          <Box  mt="5rem">
+          <Footer/>
           </Box>
         </>
     )

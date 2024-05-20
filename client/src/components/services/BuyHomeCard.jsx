@@ -31,7 +31,7 @@ function BuyHomeCard(){
                 <CardFooter>
                     <ButtonGroup spacing='2' justifyContent={'center'} width="100%">
                         <Flex as={Link} to="/PropertyList">
-                        <Button variant='solid' colorScheme='teal' >
+                        <Button variant='solid' backgroundColor='#EE4266' color="white" >
                             Browse properties
                         </Button>
                         </Flex>
