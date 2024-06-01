@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 function BuyHomeCard(){
     return(
         <div>
-            <Card maxW='sm' marginLeft={'18rem'} marginTop={'1rem'} borderWidth="1px" borderColor={'#EAEBEB'}
+            <Card maxW='sm' marginLeft={{base:'1rem',md:'rem',lg:'7rem',xl:'20rem'}} marginTop={{base:'3rem',md:'',lg:'',xl:'1rem'}} borderWidth="1px" borderColor={'#EAEBEB'} width={{base:'20rem',md:'21rem',lg:'',xl:'30rem'}}
             sx={{
                 transition: 'transform 0.3s ease-in-out', // Smooth transition
                 ':hover': {
@@ -18,7 +18,8 @@ function BuyHomeCard(){
                     src='https://img.freepik.com/free-vector/real-estate-searching-concept_23-2148657458.jpg?t=st=1713188242~exp=1713191842~hmac=31a3f5fadd4783b6e146795014ecbe6549a02a665de21d9e11f4174b88a04074&w=1380'
                     alt='Green double couch with wooden legs'
                     borderRadius='lg'
-                    height='35vh'
+                    height={{base:'20vh',md:'30vh',lg:'',xl:'35vh'}}
+                    width={{base:'100vw',md:'vw',lg:'',xl:''}}
                     />
                     <Stack mt='6' spacing='3'>
                     <Heading size='md' textAlign={'center'}>Browse Properties</Heading>
@@ -31,7 +32,7 @@ function BuyHomeCard(){
                 <CardFooter>
                     <ButtonGroup spacing='2' justifyContent={'center'} width="100%">
                         <Flex as={Link} to="/PropertyList">
-                        <Button variant='solid' backgroundColor='#EE4266' color="white" >
+                        <Button variant='solid' backgroundColor='#EE4266' colorScheme='#EE4266' color="white" >
                             Browse properties
                         </Button>
                         </Flex>

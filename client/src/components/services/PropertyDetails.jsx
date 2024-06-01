@@ -30,22 +30,22 @@ function PropertyDetails({properties}){
         <Icon as={FaArrowLeft} mt="2rem" ml="10rem" boxSize="6" color="#EE4266"/>
         </Link>
         <Flex>
-         <Box marginTop="1rem">
+         <Box marginTop="1rem" ml={{base:'-11.5rem', md:'rem',lg:'-10rem',xl:'0.1rem'}}>
         {/* main image */}
         {filteredProperties.map(prop => (
           <Image 
           src={prop.image_url}
           alt={prop.title}
-          marginLeft="10rem"
-          width="81.5%"
-          height="40vh"
+          marginLeft={{base:'12.5rem', md:'10rem',lg:'13rem',xl:'10rem'}}
+          width={{base:'245px', md:'500px',lg:'',xl:'81.5%'}}
+          height={{base:'', md:'390px',lg:'',xl:'40vh'}}
           borderRadius="10px"
           objectFit="cover"
           />
         ))}
 
          {/* images */}
-         <Grid templateColumns={'repeat(2, minmax(100px , 1fr))'} gap={''} marginLeft={'10rem'} className='image details' maxWidth={'830'} marginTop={'1rem'}>
+         <Grid templateColumns={{base:'1fr', md:'repeat(2, 1fr)',lg:'',xl:'repeat(2, 1fr)'}} gap={''} marginLeft={{base:'12.5rem', md:'10rem',lg:'13rem',xl:'10rem'}} className='image details' maxWidth={'830'} marginTop={'1rem'} >
             {images.map((img) => {
                 return <GridItem key={img.product_id}>
                   <Image 
@@ -53,8 +53,8 @@ function PropertyDetails({properties}){
                     alt={img.product_id}
                     marginTop="1rem"
                     borderRadius="10px"
-                    width="95%"
-                    height="38vh"
+                    width={{base:'600px', md:'242px',lg:'246px',xl:'95%'}}
+                    height={{base:'', md:'300px',lg:'',xl:'38vh'}}
                     objectFit="cover"
                   />
                     
@@ -63,7 +63,7 @@ function PropertyDetails({properties}){
             </Grid>
             </Box> 
 
-            <Box width="19.5%" mt="-2rem">
+            <Box width="19.5%" mt={{base:'61rem', md:'-2rem',lg:'',xl:'-2rem'}}>
             {filteredProperties.map((property) => {
                 return <Card
                     // variant='outline'key={property.id} 
@@ -71,9 +71,10 @@ function PropertyDetails({properties}){
                     padding='1rem'
                     borderWidth='1px'
                     borderColor=""
-                    height='82vh'
-                    width="17.5vw"
-                    position="fixed"
+                    height={{base:'85vh', md:'60vh',lg:'123vh',xl:'82vh'}}
+                    width={{base:'61vw', md:'30vw',lg:'25vw',xl:'17.5vw'}}
+                    position={{base:'', md:'',lg:'',xl:'fixed'}}
+                    ml={{base:'-15rem', md:'1rem',lg:'',xl:'0.1rem'}}
                     >
                      <CardHeader>
                       <Heading size='md' color="#EE4266">{property.title}</Heading>

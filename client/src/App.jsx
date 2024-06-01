@@ -11,8 +11,6 @@ import PropertyDetails from './components/services/PropertyDetails';
 import Services from './pages/Services';
 import theme from './components/home/Theme';
 import Contact from './pages/Contact';
-import SignInMessage from './components/signin/up/SignInMessage';
-import SignUpMessage from './components/signin/up/SignUpMessage';
 import SubmitFormMessage from './components/submitform/SubmitFormMessage';
 
 
@@ -47,7 +45,6 @@ function App() {
 
             
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/SignUpMessage" element={<SignUpMessage />}/>
       
             <Route path="/signin" element={<SignIn />} />
 
@@ -58,8 +55,6 @@ function App() {
             <Route path="/PropertyList" element={<PropertyList properties={properties} />} />
 
             <Route path="/PropertyDetails/:title" element={<PropertyDetails properties={properties}/>} />
-
-            <Route path="/SignInMessage" element={<SignInMessage />}/>
 
             <Route path="/SubmitFormMessage" element={<SubmitFormMessage />}/>
 

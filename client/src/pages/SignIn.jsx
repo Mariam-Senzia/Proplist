@@ -8,6 +8,11 @@ import {
   Stack,
   Heading,
   Text,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  Flex
 } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -16,7 +21,9 @@ const SignIn = () => {
     email: '',
     password: '',
   });
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [alertStatus, setAlertStaus] = useState(false);
+  const [alertMessage, setalertMessage] = useState('')
 
   // input change
   const handleInputChange = (e) => {
@@ -44,7 +51,11 @@ const SignIn = () => {
           email: "",
           password: "",
         });
-        navigate("/SignInMessage")
+        setAlertStaus(true);
+        setalertMessage("Welcome Back!")
+        setTimeout(() => {
+          navigate("/Services")
+        },2500)
         // alert(Login Successful!");
       } else {
         throw new Error("Failed to submit form.");
@@ -55,10 +66,50 @@ const SignIn = () => {
     };
 
   return (
-    <Box height="91.5vh"  mt='0.9rem' ml="-3.3rem" mr="-3.2rem"  backgroundImage="url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-54588.jpg?w=826&t=st=1713896404~exp=1713897004~hmac=3428eb2f7f6ee3518a92bc0398e6cf50801bfd960e4e510fb7c86429b2394b16')" backgroundSize={'cover'} display={'flex'}>
+    <>
+    <Box height="5vh" ml="-3.3rem" mr="-3.2rem" mb="-1rem">
+      <Box width="30%"   ml="38rem">
+      {alertStatus && (
+          <Alert status="success" mt="0.9rem" p="1rem">
+          <AlertIcon />
+          <AlertTitle>Success!</AlertTitle>
+          <AlertDescription>{alertMessage}</AlertDescription>
+        </Alert>
+      )}
+    </Box>
+   </Box>
 
-    <Box maxW="" mx="" p='2rem' mt="8rem" borderWidth={'px'}  width="30%" ml="38%" mb="10rem" borderRadius={'10px'} bgColor={'white'}>
-      <Heading as="h2" size="lg" color="#00B8B1" textAlign="center" marginTop="1rem">
+   <Flex>
+   <Box bgColor="#1B998B" mt={{base:'5rem',md:'',lg:'2rem',xl:"5rem"}} width={{base:'85vw',md:'80vw',lg:'40vw',xl:"39vw"}} ml={{base:'-1.5rem',md:'2rem',lg:'',xl:"10rem"}}  height={{base:'15vh',md:'20vh',lg:'83.5vh',xl:"70vh"}}>
+            <Link to='/'>
+                    <Flex align="center" marginLeft={{base:'2rem',md:'11rem',lg:'4rem',xl:"7rem"}} p="3.5rem" mt={{base:'-3rem',md:'0rem',lg:'1.5rem',xl:"2rem"}} >
+                        <img
+                            src="https://i.pinimg.com/736x/b5/b5/8c/b5b58c0abbd7c03eec7d3c4798ef247a.jpg"
+                            style={{
+                                height: "50px",
+                                width: "50px",
+                                marginRight: '4px',
+                                borderRadius: '50%',
+                            }}
+                            className='logo'
+                        />
+                        <Heading as="h1" size={{base:'md',md:'lg',lg:'lg',xl:"lg"}} fontWeight="bold" color="#" className='header'>
+                            Proplist
+                        </Heading>
+                    </Flex>
+                </Link>
+
+                {/* <Divider/> */}
+
+                <Text p={{base:'0.5rem',md:'2rem',lg:'3rem',xl:"5rem"}} mt={{base:'-3.5rem',md:'',lg:'-4.5rem',xl:"-4rem"}} color="" fontSize={{base:'',md:'xl',lg:'',xl:"lg"}}>
+                    Sign in and continue exploring our wide range of property listings! 
+                </Text>
+        </Box>
+
+    <Box height={{base:'66vh',md:'54vh',lg:'83.5vh',xl:"70vh"}} mt={{base:'12.9rem',md:'19.5rem',lg:'2rem',xl:"5rem"}} ml={{base:'-20.9rem',md:'-41rem',lg:'0rem',xl:"-3.3rem"}} mr="-3.2rem" width={{base:'115.6%',md:'80vw',lg:'45vw',xl:"40%"}} bgColor="#EBE9E9" display={'flex'}>
+
+    <Box maxW={{base:'',md:'',lg:'',xl:"md"}} mx="auto" p={6}  borderWidth={'px'}  width={{base:'',md:'75vw',lg:'40vw',xl:"100%"}} ml={{base:'',md:'',lg:'',xl:"11%"}} mt={{base:'4rem',md:'4rem',lg:'2rem',xl:"3.5rem"}} mb="10rem" borderRadius={'10px'} bgColor={'white'} height={{base:'50vh',md:'42vh',lg:'70vh',xl:"53vh"}}>
+      <Heading as="h2" size="lg" color="" textAlign="center" marginTop="1rem">
         Sign In
       </Heading>
       <form onSubmit={handleSubmit}>
@@ -67,7 +118,7 @@ const SignIn = () => {
             <FormLabel
               htmlFor="email"
               color="grey.600"
-              fontSize="sm"
+              fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}
               fontWeight=""
               textAlign=""
               marginBottom="2"
@@ -88,7 +139,7 @@ const SignIn = () => {
             <FormLabel
               htmlFor="password"
               color="grey.600"
-              fontSize="sm"
+              fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}
               fontWeight=""
               textAlign="left"
               marginBottom="2"
@@ -104,15 +155,15 @@ const SignIn = () => {
             />
           </FormControl>
 
-          <Button type="submit" colorScheme="teal" width="25.7vw" mt="1rem">
+          <Button type="submit" colorScheme="#EF5778" width={{base:'',md:'',lg:'',xl:"25.7vw"  }} mt="1rem" bgColor={'#1B998B'} fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>
             Sign In
           </Button>
 
           {/* Prompt to sign up */}
-          <Text fontSize="sm" color="gray.600" textAlign="center" mt={2}>
+          <Text fontSize={{base:'',md:'lg',lg:'',xl:"sm"}} color="gray.600" textAlign="center" mt={2}>
             Don't have an account?{' '}
             <Link to="/signup" textDecoration={'none'}>
-              <Button color="teal" variant="link" >
+              <Button color="#1B998B" variant="link" fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>
                 Sign Up
               </Button>
             </Link>
@@ -122,6 +173,8 @@ const SignIn = () => {
     </Box>
 
     </Box>
+    </Flex>
+    </>
   );
 };
 

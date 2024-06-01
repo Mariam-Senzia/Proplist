@@ -100,33 +100,35 @@ function ForSale({ onNewProperty }){
         <>
         <Box
             // width="100%"
-            height="150vh"
+            height={{base:'150vh', md:'130vh', lg:'260vh', xl: "150vh"}}
             display="flex"
             justifyContent="center"
             alignItems="center"
             backgroundImage='url("https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
             backgroundPosition='center'
             backgroundSize='cover'
-            marginTop = '0.9rem'
-            marginLeft='-3.5rem'
-            marginRight='-3.2rem'
+            marginTop ={{base:'1.5rem', md:'-14rem', lg:'', xl: '0.9rem'}} 
+            marginLeft={{base:'-6rem', md:'-3.3rem', lg:'-10.5rem', xl: "-3.5rem"}}
+            marginRight={{base:'-7.8rem', md:'-11.7rem', lg:'', xl: '-3.2rem'}}
         >
             <Box
                 width="100%"
-                maxWidth="600px"
-                mx="auto" // Auto margin to center the form horizontally
+                maxWidth={{base:'350px', md:'700px', lg:'', xl: "600px"}}
+                mx={{base:'', md:'', lg:'', xl: "auto"}} // Auto margin to center the form horizontally
                 p="20px"
                 boxShadow="md"
                 borderRadius="md"
                 borderWidth='1px'
                 backgroundColor={'white'}
+                mt={{base:'1rem', md:'22rem', lg:'18rem', xl: ""}}
+                ml={{ base: '-1.3rem', md: '-8rem',lg:'0rem', xl: '0rem' }} 
             >
-                <Heading as="h2" size="lg" color="#EE4266" textAlign="center" >
+                <Heading as="h2" size={{base:'', md:'xl', lg:'xl', xl: "lg"}} color="#EE4266" textAlign="center" >
                      Sell Your Property
                 </Heading>
                 <form onSubmit={handleSubmit} >
-                    <FormControl id="title" mb="10px" marginTop="1rem">
-                        <FormLabel>Title</FormLabel>
+                    <FormControl id="title" mb="10px" marginTop="1rem" >
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Title</FormLabel>
                         <Input
                             type="text"
                             name="title"
@@ -136,7 +138,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="description" mb="10px">
-                        <FormLabel>Description</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Description</FormLabel>
                         <Textarea
                             name="description"
                             value={formData.description}
@@ -145,7 +147,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="price" mb="10px">
-                        <FormLabel>Price</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Price</FormLabel>
                         <Input
                             type="text"
                             name="price"
@@ -155,7 +157,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="location" mb="10px">
-                        <FormLabel>Location</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Location</FormLabel>
                         <Input
                             type="text"
                             name="location"
@@ -165,13 +167,13 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="type" mb="10px">
-                        <FormLabel>Property Type</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Property Type</FormLabel>
                         <Select
                             name="property_type"
                             value={formData.type}
                             onChange={handleChange}
                         >
-                            <option value="">Select type</option>
+                            <option value="" fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Select type</option>
                             <option value="apartment">Apartment</option>
                             <option value="beach house">Beach House</option>
                             <option value="bungalow">Bungalow</option>
@@ -183,7 +185,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="image" mb="10px" >
-                        <FormLabel>Image</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Image</FormLabel>
                         <Input padding={'0.3rem'}
                             ref={fileInputRef}
                             type="file"
@@ -194,7 +196,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="more_images" mb="10px" >
-                        <FormLabel>More Images</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>More Images</FormLabel>
                         <Input padding={'0.3rem'}
                             type="file"
                             name="additional_images"
@@ -204,7 +206,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="beds" mb="10px" >
-                        <FormLabel>Beds</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Beds</FormLabel>
                         <Input padding={'0.3rem'}
                             type="text"
                             name="beds"
@@ -214,7 +216,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="baths" mb="10px" >
-                        <FormLabel>Baths</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Baths</FormLabel>
                         <Input padding={'0.3rem'}
                             type="text"
                             name="baths"
@@ -224,7 +226,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="amenities" mb="10px" >
-                        <FormLabel>Amenities</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>Amenities</FormLabel>
                         <Input padding={'0.3rem'}
                             type="text"
                             name="amenities"
@@ -234,7 +236,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
                     <FormControl id="whats_special" mb="10px" >
-                        <FormLabel>What's Special</FormLabel>
+                        <FormLabel fontSize={{base:'', md:'xl', lg:'', xl: ""}}>What's Special</FormLabel>
                         <Input padding={'0.3rem'}
                             type="text"
                             name="whats_special"
@@ -244,7 +246,7 @@ function ForSale({ onNewProperty }){
                     </FormControl>
 
 
-                    <Button type="submit" backgroundColor="#EE4266" color="white" mt="10px">
+                    <Button type="submit" backgroundColor="#EE4266" color="white" mt="10px" fontSize={{base:'', md:'xl', lg:'', xl: ""}}>
                         Submit
                     </Button>
                 </form>
