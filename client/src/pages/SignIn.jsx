@@ -80,9 +80,9 @@ const SignIn = () => {
    </Box>
 
    <Flex>
-   <Box bgColor="#1B998B" mt={{base:'5rem',md:'',lg:'2rem',xl:"5rem"}} width={{base:'85vw',md:'80vw',lg:'40vw',xl:"39vw"}} ml={{base:'-1.5rem',md:'2rem',lg:'',xl:"10rem"}}  height={{base:'15vh',md:'20vh',lg:'83.5vh',xl:"70vh"}}>
+   <Box bgColor="#1B998B" mt={{base:'2rem',md:'',lg:'2rem',xl:"5rem"}} width={{base:'85vw',md:'80vw',lg:'40vw',xl:"39vw"}} ml={{base:'-1.5rem',md:'2rem',lg:'',xl:"10rem"}}  height={{base:'18vh',md:'20vh',lg:'83.5vh',xl:"70vh"}}>
             <Link to='/'>
-                    <Flex align="center" marginLeft={{base:'2rem',md:'11rem',lg:'4rem',xl:"7rem"}} p="3.5rem" mt={{base:'-3rem',md:'0rem',lg:'1.5rem',xl:"2rem"}} >
+                    {/* <Flex align="center" marginLeft={{base:'2rem',md:'11rem',lg:'4rem',xl:"7rem"}} p="3.5rem" mt={{base:'-3rem',md:'0rem',lg:'1.5rem',xl:"2rem"}} >
                         <img
                             src="https://i.pinimg.com/736x/b5/b5/8c/b5b58c0abbd7c03eec7d3c4798ef247a.jpg"
                             style={{
@@ -96,19 +96,19 @@ const SignIn = () => {
                         <Heading as="h1" size={{base:'md',md:'lg',lg:'lg',xl:"lg"}} fontWeight="bold" color="#" className='header'>
                             Proplist
                         </Heading>
-                    </Flex>
+                    </Flex> */}
                 </Link>
 
                 {/* <Divider/> */}
 
-                <Text p={{base:'0.5rem',md:'2rem',lg:'3rem',xl:"5rem"}} mt={{base:'-3.5rem',md:'',lg:'-4.5rem',xl:"-4rem"}} color="" fontSize={{base:'',md:'xl',lg:'',xl:"lg"}}>
+                <Text p={{base:'1.5rem',md:'2rem',lg:'3rem',xl:"5rem"}} mt={{base:'0.5rem',md:'',lg:'-4.5rem',xl:"-4rem"}} color="" fontSize={{base:'',md:'xl',lg:'',xl:"lg"}}>
                     Sign in and continue exploring our wide range of property listings! 
                 </Text>
         </Box>
 
-    <Box height={{base:'66vh',md:'54vh',lg:'83.5vh',xl:"70vh"}} mt={{base:'12.9rem',md:'19.5rem',lg:'2rem',xl:"5rem"}} ml={{base:'-20.9rem',md:'-41rem',lg:'0rem',xl:"-3.3rem"}} mr="-3.2rem" width={{base:'115.6%',md:'80vw',lg:'45vw',xl:"40%"}} bgColor="#EBE9E9" display={'flex'}>
+    <Box height={{base:'70vh',md:'54vh',lg:'83.5vh',xl:"70vh"}} mt={{base:'9.5rem',md:'19.5rem',lg:'2rem',xl:"5rem"}} ml={{base:'-20.7rem',md:'-41rem',lg:'0rem',xl:"-3.3rem"}} mr="-3.2rem" width={{base:'115.6%',md:'80vw',lg:'45vw',xl:"40%"}} bgColor="#EBE9E9" display={'flex'}>
 
-    <Box maxW={{base:'',md:'',lg:'',xl:"md"}} mx="auto" p={6}  borderWidth={'px'}  width={{base:'',md:'75vw',lg:'40vw',xl:"100%"}} ml={{base:'',md:'',lg:'',xl:"11%"}} mt={{base:'4rem',md:'4rem',lg:'2rem',xl:"3.5rem"}} mb="10rem" borderRadius={'10px'} bgColor={'white'} height={{base:'50vh',md:'42vh',lg:'70vh',xl:"53vh"}}>
+    <Box maxW={{base:'',md:'',lg:'',xl:"md"}} mx="auto" p={6}  borderWidth={'px'}  width={{base:'',md:'75vw',lg:'40vw',xl:"100%"}} ml={{base:'',md:'',lg:'',xl:"11%"}} mt={{base:'2rem',md:'4rem',lg:'2rem',xl:"3.5rem"}} mb="10rem" borderRadius={'10px'} bgColor={'white'} height={{base:'55vh',md:'42vh',lg:'70vh',xl:"53vh"}}>
       <Heading as="h2" size="lg" color="" textAlign="center" marginTop="1rem">
         Sign In
       </Heading>
@@ -160,7 +160,7 @@ const SignIn = () => {
           </Button>
 
           {/* Prompt to sign up */}
-          <Text fontSize={{base:'',md:'lg',lg:'',xl:"sm"}} color="gray.600" textAlign="center" mt={2}>
+          <Text fontSize={{base:'',md:'lg',lg:'',xl:"sm"}} color="gray.600" textAlign="center" mt={{base:'2rem', md:'2',lg:'2',xl:'2'}}>
             Don't have an account?{' '}
             <Link to="/signup" textDecoration={'none'}>
               <Button color="#1B998B" variant="link" fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>

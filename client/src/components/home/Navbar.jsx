@@ -13,7 +13,7 @@ const Navbar = () => {
             <Flex justify="space-between" align="center">
                 {/* Logo and Title */}
               <Link to='/'>
-                <Flex align="center" marginLeft={{base:'7rem',md:'10rem',lg:'10rem',xl:'10rem'}} p={{base:'1rem',md:'1.5rem',lg:'rem',xl:'0rem'}} >
+                <Flex align="center" marginLeft={{base:'4rem',md:'10rem',lg:'10rem',xl:'10rem'}} p={{base:'0rem',md:'1.5rem',lg:'rem',xl:'0rem'}} >
                     <img
                         src="https://i.pinimg.com/736x/b5/b5/8c/b5b58c0abbd7c03eec7d3c4798ef247a.jpg"
                         style={{
@@ -24,7 +24,7 @@ const Navbar = () => {
                         }}
                         className='logo'
                     />
-                    <Heading as="h1" size={{base:'xl',md:'3xl',lg:'3xl',xl:'lg'}} fontWeight="bold" color="#EF5778" className='header'>
+                    <Heading as="h1" size={{base:'lg',md:'3xl',lg:'3xl',xl:'lg'}} fontWeight="bold" color="#EF5778" className='header'>
                         Proplist
                     </Heading>
                 </Flex>
@@ -73,7 +73,7 @@ const Navbar = () => {
                     <IconButton 
                         icon={<FiMenu />}
                         aria-label='Display menu'
-                        mr='3rem'
+                        mr='rem'
                         fontSize='24px'
                         onClick={onOpen}
                         display={{base:'flex',md:'none',lg:'none',xl:'none'}} 
@@ -89,22 +89,22 @@ const Navbar = () => {
                         <DrawerHeader borderBottomWidth="1px" borderColor="white" color={'#EF5778'}  ml='1rem' fontSize='1.5rem' >Menu</DrawerHeader>
                         <DrawerBody>
                             <Link to="/" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="home" mb={'-3.5rem'} mt='2rem' ml='1rem' fontSize='1.5rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="home" mb={'-3.5rem'} mt='2rem' ml='1rem' fontSize='1rem'>
                                     Home
                                 </Text>
                             </Link>
                             <Link to="/services" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="services" mb={6}  ml='1rem' fontSize='1.5rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="services" mb={6}  ml='1rem' fontSize='1rem'>
                                     Services
                                 </Text>
                             </Link>
                             <Link to="/signin" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" className='sign-in' _hover={{ color: '#EF5778' }} mb={6}  ml='1rem' fontSize='1.5rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" className='sign-in' _hover={{ color: '#EF5778' }} mb={6}  ml='1rem' fontSize='1rem'>
                                     Sign In
                                 </Text>
                             </Link>
                             <Link to="/contact" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" className='contact' _hover={{ color: '#EF5778'}}  ml='1rem' fontSize='1.5rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" className='contact' _hover={{ color: '#EF5778'}}  ml='1rem' fontSize='1rem'>
                                     Contact
                                 </Text>
                             </Link>

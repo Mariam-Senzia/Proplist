@@ -20,7 +20,7 @@ function SearchBar({properties}) {
     
     return (
         <div>
-            <InputGroup marginTop={{base:'3rem', md:'6rem',lg:'1rem', xl:'1rem'}} ml={{base:'-11rem', md:'0rem',lg:'0rem', xl:'0rem'}}  >
+            <InputGroup marginTop={{base:'1rem', md:'6rem',lg:'1rem', xl:'1rem'}} ml={{base:'-11rem', md:'0rem',lg:'0rem', xl:'0rem'}}  >
                 <InputLeftElement pointerEvents="none"  mt="1rem">
                     <SearchIcon className="searchIcon" color='#EE4266' _placeholder={{ color: 'inherit' }}/>
                 </InputLeftElement>

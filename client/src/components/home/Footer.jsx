@@ -5,7 +5,7 @@ import { FaEnvelope, FaPhone , FaLinkedin, FaTwitter,FaInstagram} from 'react-ic
 const Footer = () => {
     return (
         <>
-        <Box className='footer' as="footer" bg="#282A3E" color="white" height='25vh'  w={{base:'53rem', md:'120.9rem',lg:'201vw',xl:'109.3%'}} marginBottom="-3.3rem" marginRight="" marginLeft={{base:'-3.5rem', md:'',lg:'rem',xl:'-5rem'}}>
+        <Box className='footer' as="footer" bg="#282A3E" color="white" height='25vh'  w={{base:'30rem', md:'120.9rem',lg:'201vw',xl:'109.3%'}} marginBottom="-3.3rem" marginRight="" marginLeft={{base:'-5.5rem', md:'',lg:'rem',xl:'-5rem'}}>
             <Flex
                 justify="space-between"
                 maxW="12rem"
@@ -37,11 +37,11 @@ const Footer = () => {
 
                 </Flex>
 
-                <Text ml={{base:'22rem', md:'55rem',lg:'59rem',xl:'45rem'}} fontSize={{base:'1.2rem', md:'1.8rem',lg:'1.5rem',xl:''}}>Nairobi, Kenya</Text>
+                <Text ml={{base:'12rem', md:'55rem',lg:'59rem',xl:'45rem'}} fontSize={{base:'0.9rem', md:'1.8rem',lg:'1.5rem',xl:''}}>Nairobi, Kenya</Text>
 
                 <Box>
                 {/* Footer text*/}
-                        <Text textAlign="center" mt={{base:'1rem', md:'3rem',lg:'-0.3rem',xl:'2rem'}} bg='black' p='1rem' fontSize={{base:'1.2rem', md:'1.8rem',lg:'1.5rem',xl:'sm'}}>
+                        <Text textAlign="center" mt={{base:'1rem', md:'3rem',lg:'-0.3rem',xl:'2rem'}} bg='black' p='1rem' fontSize={{base:'0.9rem', md:'1.8rem',lg:'1.5rem',xl:'sm'}}>
                             &copy; {new Date().getFullYear()} Proplist Real Estate Platform. All rights reserved.
                         </Text> 
                 </Box>

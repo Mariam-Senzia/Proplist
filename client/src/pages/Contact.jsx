@@ -181,7 +181,7 @@ function Contact(){
                 </form>
           </Box>
         
-          <Box  mt={{base:'11rem', md:'47.5rem',lg:'30rem',xl:'5rem'}} ml={{base:'-11rem', md:'',lg:'',xl:'0rem'}} >
+          <Box  mt={{base:'11rem', md:'47.5rem',lg:'30rem',xl:'5rem'}} ml={{base:'-1.5rem', md:'',lg:'',xl:'0rem'}} >
           <Footer/>
           </Box>
         </>

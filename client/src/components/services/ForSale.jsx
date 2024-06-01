@@ -100,14 +100,14 @@ function ForSale({ onNewProperty }){
         <>
         <Box
             // width="100%"
-            height={{base:'150vh', md:'130vh', lg:'260vh', xl: "150vh"}}
+            height={{base:'170vh', md:'130vh', lg:'260vh', xl: "150vh"}}
             display="flex"
             justifyContent="center"
             alignItems="center"
             backgroundImage='url("https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
             backgroundPosition='center'
             backgroundSize='cover'
-            marginTop ={{base:'1.5rem', md:'-14rem', lg:'', xl: '0.9rem'}} 
+            marginTop ={{base:'rem', md:'-14rem', lg:'', xl: '0.9rem'}} 
             marginLeft={{base:'-6rem', md:'-3.3rem', lg:'-10.5rem', xl: "-3.5rem"}}
             marginRight={{base:'-7.8rem', md:'-11.7rem', lg:'', xl: '-3.2rem'}}
         >
@@ -120,7 +120,7 @@ function ForSale({ onNewProperty }){
                 borderRadius="md"
                 borderWidth='1px'
                 backgroundColor={'white'}
-                mt={{base:'1rem', md:'22rem', lg:'18rem', xl: ""}}
+                mt={{base:'5rem', md:'22rem', lg:'18rem', xl: ""}}
                 ml={{ base: '-1.3rem', md: '-8rem',lg:'0rem', xl: '0rem' }} 
             >
                 <Heading as="h2" size={{base:'', md:'xl', lg:'xl', xl: "lg"}} color="#EE4266" textAlign="center" >
