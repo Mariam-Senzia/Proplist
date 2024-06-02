@@ -71,7 +71,7 @@ function PropertyDetails({properties}){
                     padding='1rem'
                     borderWidth='1px'
                     borderColor=""
-                    height={{base:'85vh', md:'60vh',lg:'123vh',xl:'82vh'}}
+                    height={{base:'93vh', md:'60vh',lg:'123vh',xl:'82vh'}}
                     width={{base:'61vw', md:'30vw',lg:'25vw',xl:'17.5vw'}}
                     position={{base:'', md:'',lg:'',xl:'fixed'}}
                     ml={{base:'-15rem', md:'1rem',lg:'',xl:'0.1rem'}}

@@ -79,7 +79,7 @@ function Contact(){
     return (
         <>
             <Box display={{base:'', md:'flex',lg:'flex',xl:'flex'}} justifyContent='' mt={{base:'-3rem', md:'7rem',lg:'25rem',xl:'rem'}} >
-            <Grid templateColumns={'repeat(2, minmax(100px , 1fr))'} gap={{base:'3.5rem', md:'6rem',lg:'',xl:'6rem'}} marginLeft={{base:'19rem', md:'19rem',lg:'24rem',xl:'38rem'}} className='contact-card' maxWidth={'25rem'} marginTop={{base:'10rem', md:'16rem',lg:'-10rem',xl:'-16rem'}}>
+            <Grid templateColumns={'repeat(2, minmax(100px , 1fr))'} gap={{base:'3.5rem', md:'6rem',lg:'',xl:'6rem'}} marginLeft={{base:'19rem', md:'19rem',lg:'24rem',xl:'38rem'}} className='contact-card' maxWidth={'25rem'} marginTop={{base:'7rem', md:'16rem',lg:'-10rem',xl:'-16rem'}}>
             {contacts.map((cont) => {
                 return <GridItem key={cont.title}>
                     <Card maxW={{base:'', md:'',lg:'',xl:'sm'}} className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} width={{base:'37vw', md:'16vh',lg:'18vw',xl:'12vw'}} ml={{base:'-19.5rem', md:'',lg:'',xl:''}} height={{base:'23vh', md:'20vh',lg:'26vh',xl:'22vh'}} mt={{base:'0rem', md:'',lg:'',xl:''}} >
@@ -112,10 +112,10 @@ function Contact(){
                 borderRadius="md"
                 borderWidth='1px'
                 backgroundColor={'#8AD9E5'}
-                mt={{base:'2rem', md:'-45rem',lg:'-33rem',xl:'-31rem'}}
+                mt={{base:'3rem', md:'-45rem',lg:'-33rem',xl:'-31rem'}}
                 ml={{base:'-0.5rem', md:'18rem',lg:'25rem',xl:'40rem'}} 
                 padding='5rem'
-                height={{base:'48vh', md:'72vh',lg:'104vh',xl:'70vh'}} 
+                height={{base:'52vh', md:'72vh',lg:'104vh',xl:'70vh'}} 
             >    
                 <form onSubmit={handleSubmit} autoComplete="off">
                     <Heading textAlign={'center'} marginTop={{base:'-2.5rem', md:'5rem',lg:'-2rem',xl:'-2rem'}} 
@@ -181,7 +181,7 @@ function Contact(){
                 </form>
           </Box>
         
-          <Box  mt={{base:'11rem', md:'47.5rem',lg:'30rem',xl:'5rem'}} ml={{base:'-1.5rem', md:'',lg:'',xl:'0rem'}} >
+          <Box  mt={{base:'5rem', md:'47.5rem',lg:'30rem',xl:'5rem'}} ml={{base:'-1.5rem', md:'',lg:'',xl:'0rem'}} >
           <Footer/>
           </Box>
         </>

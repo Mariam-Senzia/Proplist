@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 function BuyHomeCard(){
     return(
         <div>
-            <Card maxW='sm' marginLeft={{base:'1rem',md:'rem',lg:'7rem',xl:'20rem'}} marginTop={{base:'3rem',md:'',lg:'',xl:'1rem'}} borderWidth="1px" borderColor={'#EAEBEB'} width={{base:'20rem',md:'21rem',lg:'',xl:'30rem'}}
+            <Card maxW='sm' marginLeft={{base:'1rem',md:'rem',lg:'7rem',xl:'20rem'}} marginTop={{base:'rem',md:'',lg:'',xl:'1rem'}} borderWidth="1px" borderColor={'#EAEBEB'} width={{base:'20rem',md:'21rem',lg:'',xl:'30rem'}}
             sx={{
                 transition: 'transform 0.3s ease-in-out', // Smooth transition
                 ':hover': {
