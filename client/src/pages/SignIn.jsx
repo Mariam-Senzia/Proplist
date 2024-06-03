@@ -101,7 +101,7 @@ const SignIn = () => {
 
                 {/* <Divider/> */}
 
-                <Text p={{base:'1.5rem',md:'2rem',lg:'3rem',xl:"5rem"}} mt={{base:'0.5rem',md:'',lg:'-4.5rem',xl:"-4rem"}} color="" fontSize={{base:'',md:'xl',lg:'',xl:"lg"}}>
+                <Text p={{base:'1.5rem',md:'2rem',lg:'3rem',xl:"5rem"}} mt={{base:'0.5rem',md:'',lg:'-4.5rem',xl:"6rem"}} color="" fontSize={{base:'',md:'xl',lg:'',xl:"lg"}}>
                     Sign in and continue exploring our wide range of property listings! 
                 </Text>
         </Box>

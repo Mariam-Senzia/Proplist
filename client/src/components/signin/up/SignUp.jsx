@@ -103,14 +103,14 @@ const SignUp = () => {
  
                 {/* <Divider/> */}
 
-                <Text p={{base:'0.8rem',md:'2rem',lg:'3rem',xl:"3rem"}} mt={{base:'1.5rem',md:'-5rem',lg:'',xl:"-2rem"}} width={{base:'80vw',md:'',lg:'35vw',xl:"32vw"}} color="" fontSize={{base:'',md:'xl',lg:'',xl:"lg"}} ml={{base:'',md:'',lg:'3rem',xl:""}}>
+                <Text p={{base:'0.8rem',md:'2rem',lg:'3rem',xl:"3rem"}} mt={{base:'1.5rem',md:'-5rem',lg:'',xl:"9rem"}} width={{base:'80vw',md:'',lg:'35vw',xl:"32vw"}} color="" fontSize={{base:'',md:'xl',lg:'',xl:"lg"}} ml={{base:'',md:'',lg:'3rem',xl:"0.5rem"}}>
                     Sign up and join our property listings community! 🏡 Let's find your dream home together!
                 </Text>
         </Box>
 
     <Box  height={{base:'75vh',md:'52vh',lg:'80vh',xl:"70vh"}} mt={{base:'4rem',md:'19.7rem',lg:'3rem',xl:"5rem"}} ml={{base:'rem',md:'-41rem',lg:'0rem',xl:"-3.3rem"}} width={{base:'90vw',md:'80vw',lg:'46vw',xl:"40%"}} bgColor="#EBE9E9" display='flex'> 
 
-      <Box maxW={{base:'',md:'',lg:'',xl:"md"}} mx="auto" p={6} bgColor='white' width={{base:'90%',md:'75vw',lg:'40vw',xl:"100%"}} mt={{base:'3rem',md:'',lg:'2rem',xl:"3.5rem"}} mb='8.5rem' ml={{base:'',md:'',lg:'',xl:"-11%"}} borderRadius='10px' height={{base:'60vh',md:'40vh',lg:'70vh',xl:"53vh"}}>
+      <Box maxW={{base:'',md:'',lg:'',xl:"md"}} mx="auto" p={6} bgColor='white' width={{base:'90%',md:'75vw',lg:'40vw',xl:"100%"}} mt={{base:'3rem',md:'',lg:'2rem',xl:"3.5rem"}} mb='8.5rem' ml={{base:'',md:'',lg:'',xl:""}} borderRadius='10px' height={{base:'60vh',md:'40vh',lg:'70vh',xl:"53vh"}}>
           <Heading as="h2" size="lg" color="" textAlign="center" marginTop="rem">
           Sign Up
           </Heading>

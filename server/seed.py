@@ -1,5 +1,6 @@
 from app import app, db
 from models import User, Property, Review
+from sqlalchemy import text
 
 users_list = [
     {"name": "Juma Hassan", "email": "jumahassan@gmail.com", "phone_number": '0743269763',"message":""},  
@@ -14,14 +15,14 @@ reviews = [
     {"property_id": 2, "user_id": 4, "rating": 5, "comment": "Stylish urban living in Kileleshwa."},
     {"property_id": 3, "user_id": 2, "rating": 4, "comment": "Serene retreat amidst lush greenery."},
     {"property_id": 4, "user_id": 1, "rating": 4.5, "comment": "Stunning beach house perfect for getaways."},
-    {"property_id": 5, "user_id": 7, "rating": 5, "comment": "Contemporary living in a vibrant neighborhood."},
-    {"property_id": 6, "user_id": 9, "rating": 4, "comment":  "Sleek and modern living space."},
+    {"property_id": 5, "user_id": 5, "rating": 5, "comment": "Contemporary living in a vibrant neighborhood."},
+    {"property_id": 6, "user_id": 1, "rating": 4, "comment":  "Sleek and modern living space."},
     {"property_id": 7, "user_id": 5, "rating": 3, "comment": " Luxurious apartment with rooftop amenities."},
-    {"property_id": 8, "user_id": 12, "rating": 4.5, "comment": "Cozy yet contemporary apartment in Westlands."},
-    {"property_id": 9, "user_id": 10, "rating": 5, "comment": "Opportunity for development or investment"},
-    {"property_id": 10, "user_id": 11, "rating": 4, "comment": "Expansive residential land in a sought-after neighborhood."},
-    {"property_id": 11, "user_id": 8, "rating": 3.5, "comment": "Spacious commercial space in Syokimau."},
-    {"property_id": 12, "user_id": 6, "rating": 5, "comment": "Prime office property in the heart of Westlands."},
+    {"property_id": 8, "user_id": 2, "rating": 4.5, "comment": "Cozy yet contemporary apartment in Westlands."},
+    {"property_id": 9, "user_id": 1, "rating": 5, "comment": "Opportunity for development or investment"},
+    {"property_id": 10, "user_id": 4, "rating": 4, "comment": "Expansive residential land in a sought-after neighborhood."},
+    {"property_id": 11, "user_id": 3, "rating": 3.5, "comment": "Spacious commercial space in Syokimau."},
+    {"property_id": 1, "user_id": 1, "rating": 5, "comment": "Prime office property in the heart of Westlands."},
 ]
 
 properties = [
@@ -43,7 +44,7 @@ properties = [
 
     {"title": "Escada", "description": "A cozy yet contemporary apartment with thoughtfully designed interiors","price": "Ksh 5,000,000", "property_type": "apartment", "image_url":"https://a0.muscache.com/im/pictures/b01038fe-6ca3-466b-9007-595507897752.jpg?im_w=720","location":"Gigiri","bedrooms":"1","bathrooms": '1',"whats_special":"Fully equipped gym","amenities":"Community Pool"},
 
-    {"title": "Skyhigh", "description": "An upscale apartment with luxury amenities, including a rooftop pool","price": "Ksh 10,000,000", "property_type": "apartment", "image_url":"https://a0.muscache.com/im/pictures/miso/Hosting-587489348466693152/original/27856720-fe9c-4ee1-acab-bdf8a2d12ca2.jpeg?im_w=1440","location":"Riverside","bedrooms":"2","bathrooms": '1.5',"whats_special":"Sitting Balcony","amenities":"Fully rooftop pool"},
+    {"title": "Skyhigh", "description": "An upscale apartment with luxury amenities, including a rooftop pool","price": "Ksh 10,000,000", "property_type": "apartment", "image_url":"https://a0.muscache.com/im/pictures/miso/Hosting-587489348466693152/original/27856720-fe9c-4ee1-acab-bdf8a2d12ca2.jpeg?im_w=1440","location":"Riverside","bedrooms":"2","bathrooms": '2',"whats_special":"Sitting Balcony","amenities":"Fully rooftop pool"},
 
     {"title": "Amani haven", "description": "A modern apartment in the coast,perfect weekend getaways.","price": "Ksh 8,000,000", "property_type": "apartment", "image_url":"https://amaniluxuryapartments.com/wp-content/uploads/2021/08/IMG_6335.jpg","location":"Diani","bedrooms":"1","bathrooms": '1',"whats_special":"Open Floor Plan","amenities":"Community Pool"},
 ]
@@ -76,6 +77,13 @@ def seed_database():
     User.query.delete()
     Property.query.delete()
     Review.query.delete()
+
+    # Reset primary key sequences//postgress
+    db.session.execute(text('ALTER SEQUENCE users_id_seq RESTART WITH 1'))
+    db.session.execute(text('ALTER SEQUENCE properties_id_seq RESTART WITH 1'))
+    db.session.execute(text('ALTER SEQUENCE reviews_id_seq RESTART WITH 1'))
+
+    db.session.commit()
 
     db.create_all()
 

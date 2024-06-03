@@ -120,8 +120,8 @@ function ForSale({ onNewProperty }){
                 borderRadius="md"
                 borderWidth='1px'
                 backgroundColor={'white'}
-                mt={{base:'5rem', md:'22rem', lg:'18rem', xl: ""}}
-                ml={{ base: '-1.3rem', md: '-8rem',lg:'0rem', xl: '0rem' }} 
+                mt={{base:'5rem', md:'22rem', lg:'18rem', xl: "8rem"}}
+                ml={{ base: '-1.3rem', md: '-8rem',lg:'rem', xl: 'rem' }} 
             >
                 <Heading as="h2" size={{base:'', md:'xl', lg:'xl', xl: "lg"}} color="#EE4266" textAlign="center" >
                      Sell Your Property

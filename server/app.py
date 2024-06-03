@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response, jsonify,url_for, session
+from flask import Flask, request, make_response, jsonify,url_for, session,render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import db, User, Property, Review, Image
@@ -7,10 +7,19 @@ from flask_bcrypt import Bcrypt
 import os
 import cloudinary
 import cloudinary.uploader
+from dotenv import load_dotenv
+load_dotenv()
 
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app = Flask(
+    __name__,
+    static_url_path='',
+    static_folder='../client/dist',
+    template_folder='../client/dist'
+    )
+
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
 # cookies seesions
@@ -38,6 +47,11 @@ cloudinary.config(
   api_key = "865799727479877", 
   api_secret = "1r484edxckpzuk19eDXcbJvhMhc" 
 )
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("index.html")
 
 @app.route('/')
 def index():

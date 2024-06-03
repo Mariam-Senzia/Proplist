@@ -33,7 +33,7 @@ class Property(db.Model):
     description = db.Column(db.Text)
     location = db.Column(db.String)
     property_type = db.Column(db.Text, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Text, nullable=False)
     bedrooms = db.Column(db.Integer)
     bathrooms = db.Column(db.Integer)
     whats_special = db.Column(db.String)
