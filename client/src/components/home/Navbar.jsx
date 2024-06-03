@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Flex, Heading, Button, IconButton, Spacer, useColorMode, Text, useDisclosure,Drawer, DrawerOverlay,DrawerHeader, DrawerContent, DrawerBody, DrawerCloseButton} from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FiMoon, FiSun, FiMenu } from 'react-icons/fi';
-import "./navbar.css"
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();

@@ -2,7 +2,6 @@ import React from 'react'
 import { Box,Heading,Card, CardBody, Stack, Image, ButtonGroup, Divider, CardFooter,Text,Grid, GridItem } from "@chakra-ui/react";
 import InitialFocus from './RequestModal';
 import SearchBar from './SearchBar';
-import "./property.css"
 import { Link } from 'react-router-dom';
 import Footer from '../home/Footer';
 
