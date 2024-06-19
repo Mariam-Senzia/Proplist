@@ -43,9 +43,9 @@ if not os.path.exists(upload_folder):
 import cloudinary
           
 cloudinary.config( 
-  cloud_name = "dqgwkixif", 
-  api_key = "865799727479877", 
-  api_secret = "1r484edxckpzuk19eDXcbJvhMhc" 
+  cloud_name = os.getenv("CLOUD_NAME"), 
+  api_key = os.getenv("API_KEY"), 
+  api_secret = os.getenv("API_SECRET") 
 )
 
 
