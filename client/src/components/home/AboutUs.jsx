@@ -79,7 +79,7 @@ const AboutUs = ({properties}) => {
         <Grid templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)', xl: 'repeat(3, 1fr)' }} gap={{base:'3rem', md:'',lg:'',xl:'5'}} marginLeft={{base:'11rem', md:'8rem',lg:'9.5rem',xl:'10rem'}} className='prop-card' marginBottom="4rem" marginTop="4rem" width={{base:'', md:'',lg:'60rem',xl:'69rem'}}>
             {properties.slice(8,12).map((prop) => {
                 return <GridItem key={prop.id}>
-                    <Card width={{base:'19.7rem', md:'30rem',lg:'32.2rem',xl:'22rem'}} height={{base:'24rem', md:'49rem',lg:'',xl:'28rem'}} className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} >
+                    <Card width={{base:'19.7rem', md:'30rem',lg:'38rem',xl:'22rem'}} height={{base:'24rem', md:'49rem',lg:'',xl:'28rem'}} className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} >
                     <CardBody>
                       <Link to={`/PropertyDetails/${prop.title}`}>
                         <Image

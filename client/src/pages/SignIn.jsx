@@ -155,7 +155,7 @@ const SignIn = () => {
             />
           </FormControl>
 
-          <Button type="submit" colorScheme="#EF5778" width={{base:'',md:'',lg:'',xl:"25.7vw"  }} mt="1rem" bgColor={'#1B998B'} fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>
+          <Button type="submit" colorScheme="#EF5778" width={{base:'',md:'',lg:'20rem',xl:"25.7vw"  }} mt="1rem" bgColor={'#1B998B'} fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>
             Sign In
           </Button>
 

@@ -82,7 +82,7 @@ function Contact(){
             <Grid templateColumns={'repeat(2, minmax(100px , 1fr))'} gap={{base:'3.5rem', md:'6rem',lg:'',xl:'6rem'}} marginLeft={{base:'19rem', md:'19rem',lg:'24rem',xl:'38rem'}} className='contact-card' maxWidth={'25rem'} marginTop={{base:'7rem', md:'16rem',lg:'-10rem',xl:'-16rem'}}>
             {contacts.map((cont) => {
                 return <GridItem key={cont.title}>
-                    <Card maxW={{base:'', md:'',lg:'',xl:'sm'}} className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} width={{base:'37vw', md:'16vh',lg:'18vw',xl:'12vw'}} ml={{base:'-19.5rem', md:'',lg:'',xl:''}} height={{base:'23vh', md:'20vh',lg:'26vh',xl:'22vh'}} mt={{base:'0rem', md:'',lg:'',xl:''}} >
+                    <Card maxW={{base:'', md:'',lg:'',xl:'sm'}} className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} width={{base:'37vw', md:'16vh',lg:'15vw',xl:'12vw'}} ml={{base:'-19.5rem', md:'',lg:'',xl:''}} height={{base:'23vh', md:'20vh',lg:'26vh',xl:'22vh'}} mt={{base:'0rem', md:'',lg:'',xl:''}} >
                     <CardBody>
                         <Icon
                         as={cont.icon}
@@ -113,7 +113,7 @@ function Contact(){
                 borderWidth='1px'
                 backgroundColor={'#8AD9E5'}
                 mt={{base:'3rem', md:'-45rem',lg:'-33rem',xl:'-31rem'}}
-                ml={{base:'-0.5rem', md:'18rem',lg:'25rem',xl:'40rem'}} 
+                ml={{base:'-0.5rem', md:'18rem',lg:'28rem',xl:'40rem'}} 
                 padding='5rem'
                 height={{base:'52vh', md:'72vh',lg:'104vh',xl:'70vh'}} 
             >    

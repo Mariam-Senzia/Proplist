@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const SellCard = ({ children }) => {
     return (
         <div className="sell-card-container">
-            <Card maxW='sm' borderWidth="1px" borderRadius="lg" boxShadow="lg" mt={{base:'3rem',md:'',lg:'',xl:'1rem'}} borderColor={'#EAEBEB'} width={{base:'20rem',md:'21rem',lg:'',xl:'30rem'}} marginLeft={{base:'1rem',md:'',lg:'2rem',xl:'3rem'}}
+            <Card maxW='sm' borderWidth="1px" borderRadius="lg" boxShadow="lg" mt={{base:'3rem',md:'',lg:'',xl:'1rem'}} borderColor={'#EAEBEB'} width={{base:'20rem',md:'21rem',lg:'30rem',xl:'30rem'}} marginLeft={{base:'1rem',md:'',lg:'2rem',xl:'3rem'}}
             sx={{
                 transition: 'transform 0.3s ease-in-out',
                 ':hover': {
