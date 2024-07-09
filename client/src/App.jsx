@@ -21,7 +21,8 @@ function App() {
   const [userName, SetUserName] = useState('');
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5555/properties')
+    // fetch('http://127.0.0.1:5555/properties')
+    fetch('https://proplist-8.onrender.com/properties')
       .then((res) => res.json())
       .then((data) => setProperties(data));
   }, []);

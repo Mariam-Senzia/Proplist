@@ -11,7 +11,7 @@ function PropertyDetails({properties}){
 
 
     useEffect(() => {
-      fetch("http://127.0.0.1:5555/images")
+      fetch("https://proplist-8.onrender.com/images")
       .then((res) => res.json())
       .then((data) => {
         const filteredImages = data.filter(image => {

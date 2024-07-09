@@ -47,7 +47,7 @@ function ForSale({ onNewProperty }){
 
         // console.log("s,dfjvnskjfv", formDataToSend)
 
-        fetch('http://127.0.0.1:5555/properties',{
+        fetch('https://proplist-8.onrender.com/properties',{
             method: 'POST',
             body: formDataToSend,
             headers: {
