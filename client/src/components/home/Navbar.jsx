@@ -36,6 +36,7 @@ const Navbar = () => {
                             Home
                         </Text>
                     </Link>
+                    
                     <Link to="/services" style={{ textDecoration: 'none' }}>
                         <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="services" marginRight="3.5rem" fontSize={{base:'',md:'2rem',lg:'',xl:'1rem'}}>
                             Services
@@ -83,27 +84,27 @@ const Navbar = () => {
              {/* Drawer for mobile navigation */}
              <Drawer placement="right" onClose={onClose} isOpen={isOpen} >
                 <DrawerOverlay>
-                    <DrawerContent bg="black" height='45vh'>
+                    <DrawerContent bg="black" height='vh'>
                         <DrawerCloseButton color="white" size='10px' mr='1rem'mt='1rem'/>
                         <DrawerHeader borderBottomWidth="1px" borderColor="white" color={'#EF5778'}  ml='1rem' fontSize='1.5rem' >Menu</DrawerHeader>
                         <DrawerBody>
                             <Link to="/" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="home" mb={'-3.5rem'} mt='2rem' ml='1rem' fontSize='1rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="home" mb={'4rem'} mt='2rem' ml='1rem' fontSize='1rem' >
                                     Home
                                 </Text>
                             </Link>
                             <Link to="/services" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="services" mb={6}  ml='1rem' fontSize='1rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" _hover={{ color: '#EF5778' }} className="services" mb={6}  ml='1rem' fontSize='1rem' >
                                     Services
                                 </Text>
                             </Link>
                             <Link to="/signin" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" className='sign-in' _hover={{ color: '#EF5778' }} mb={6}  ml='1rem' fontSize='1rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" className='sign-in' _hover={{ color: '#EF5778' }} mb={6}  ml='1rem' fontSize='1rem' mt='4rem'>
                                     Sign In
                                 </Text>
                             </Link>
                             <Link to="/contact" style={{ textDecoration: 'none' }} onClick={onClose}>
-                                <Text variant="ghost" color="white" fontWeight="500" className='contact' _hover={{ color: '#EF5778'}}  ml='1rem' fontSize='1rem'>
+                                <Text variant="ghost" color="white" fontWeight="500" className='contact' _hover={{ color: '#EF5778'}}  ml='1rem' fontSize='1rem' mt='4rem'>
                                     Contact
                                 </Text>
                             </Link>

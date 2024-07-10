@@ -15,7 +15,7 @@ function PropertyList({properties}){
             </Box>
 
 
-            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)',lg:'repeat(3, 1fr)', xl: 'repeat(3, 1fr)' }} gap={{base:'2rem', md:'2rem',lg:'',xl:'5'}} className='prop-card' width={{base:'', md:'70rem',lg:'60rem',xl:'69rem'}} marginBottom="4rem" marginLeft={{base:'11rem', md:'9.5rem',lg:'9.5rem',xl:'10rem'}}>
+            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)',lg:'repeat(3, 1fr)', xl: 'repeat(3, 1fr)' }} gap={{base:'2rem', md:'2rem',lg:'',xl:'5'}} className='prop-card' width={{base:'', md:'70rem',lg:'60rem',xl:'69rem'}} marginBottom="4rem" marginLeft={{base:'-1rem', md:'9.5rem',lg:'9.5rem',xl:'10rem'}}>
             {properties.map((prop) => {
                 return <GridItem key={prop.id}>
                     <Card maxW='sm' className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} width={{base:'20rem', md:'110rem',lg:'38rem',xl:'22rem'}} height={{base:'30rem', md:'53rem',lg:'',xl:'32rem'}}>

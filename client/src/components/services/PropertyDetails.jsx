@@ -63,7 +63,7 @@ function PropertyDetails({properties}){
             </Grid>
             </Box> 
 
-            <Box width="19.5%" mt={{base:'61rem', md:'-2rem',lg:'',xl:'-2rem'}}>
+            <Box width="19.5%" mt={{base:'55rem', md:'-2rem',lg:'',xl:'-2rem'}}>
             {filteredProperties.map((property) => {
                 return <Card
                     // variant='outline'key={property.id} 
