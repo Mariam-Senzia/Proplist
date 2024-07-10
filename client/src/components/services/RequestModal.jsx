@@ -117,10 +117,10 @@ function InitialFocus() {
                  color='grey'
                 />
             </FormControl>
-            <Button type="submit" colorScheme='teal' mr={3} marginTop={"3rem"} marginLeft={'8rem'}>
+            <Button type="submit" colorScheme='teal' mr={{base:'3',md:'3',lg:'3',xl:'3'}} marginTop={{base:'3rem',md:'3rem',lg:'3rem',xl:'3rem'}} marginLeft={{base:'5.5rem',md:'8rem',lg:'8rem',xl:'8rem'}}>
               Send Request
             </Button>
-            <Button onClick={onClose}  marginTop={"3rem"} marginLeft={'1rem'} _hover={{color : 'teal'}}>Cancel</Button>
+            <Button onClick={onClose}  marginTop={{base:'3rem',md:'3rem',lg:'3rem',xl:'3rem'}} marginLeft={{base:'1rem',md:'1rem',lg:'1rem',xl:'1rem'}} _hover={{color : 'teal'}}>Cancel</Button>
           </form>
           </ModalBody>
 

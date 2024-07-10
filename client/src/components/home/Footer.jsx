@@ -21,12 +21,8 @@ const Footer = () => {
             </Flex>
 
             {/* Contact */}
-            <Flex align="center" justify="space-between"
-                maxW="27rem"
-                mx="auto"
-                p={'1rem'}
-                >
-                <Link href="tel:+254718643206" ml={'7'} fontSize="lg" color="white" textDecoration="none">
+            <Flex align="center" justify="space-between" maxW="24rem" mx="auto" p={'1rem'} >
+                <Link href="tel:+254718643206" ml={''} fontSize="lg" color="white" textDecoration="none">
                     <Icon as={FaPhone} mr={'0.5rem'} />
                         +254718643206
                 </Link>    
@@ -35,7 +31,7 @@ const Footer = () => {
                         proplist@gmail.com 
                 </Link>
 
-                </Flex>
+            </Flex>
 
                 <Text ml={{base:'12rem', md:'55rem',lg:'59rem',xl:'45rem'}} fontSize={{base:'0.9rem', md:'1.8rem',lg:'1.5rem',xl:''}}>Nairobi, Kenya</Text>
 
