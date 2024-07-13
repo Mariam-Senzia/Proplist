@@ -11,17 +11,6 @@
         "src": "/(.*)",
         "dest": "server/app.py"
       }
-    ],
-    "env": {
-        "DATABASE_URL": "@DATABASE_URL",
-        "API_SECRET": "@API_SECRET",
-        "API_KEY": "@API_KEY",
-        "CLOUD_NAME": "@CLOUD_NAME"
-    },
-    "build": {
-        "env": {
-          "PIPENV_VENV_IN_PROJECT": "true"
-        }
-    }
-  }
+    ]
+}
   
