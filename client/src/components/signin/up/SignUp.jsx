@@ -13,8 +13,13 @@ import {
   AlertDescription,
   Flex,
   Text,
+  InputGroup,
+  InputRightElement,
+  Avatar,
+  IconButton
 } from '@chakra-ui/react';
 import { Link,useNavigate } from 'react-router-dom';
+import { ViewIcon,ViewOffIcon, EditIcon } from '@chakra-ui/icons';
 
 
 const SignUp = () => {
@@ -25,9 +30,15 @@ const SignUp = () => {
   });
   const [alertStatus, setAlertStatus] = useState(false)
   const [alertMessage, setalertMessage] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(false)
   const navigate = useNavigate();
 
 
+  // Password Visibility
+  const handlePassword = () => {
+    setPasswordVisible(!passwordVisible)
+  }
+  
   // input change
   const handleInputChange = (e) => {
     setFormData({
@@ -82,7 +93,7 @@ const SignUp = () => {
    </Box>
    </Box>
 <Flex>
-   <Box display={{base:'none',md:'flex',lg:'flex',xl:'flex'}} bgColor="#1B998B" mt={{base:'5rem',md:'',lg:'3rem',xl:"5rem"}} width={{base:'75.4vw',md:'80vw',lg:'80vh',xl:"35vw"}} ml={{base:'rem',md:'2rem',lg:'1rem',xl:"10rem"}}  height={{base:'22vh',md:'20vh',lg:'80vh',xl:"70vh"}}>
+   <Box display={{base:'none',md:'flex',lg:'flex',xl:'flex'}} bgColor="#1B998B" mt={{base:'5rem',md:'',lg:'3rem',xl:"5rem"}} width={{base:'75.4vw',md:'80vw',lg:'80vh',xl:"35vw"}} ml={{base:'rem',md:'2rem',lg:'1rem',xl:"10rem"}}  height={{base:'22vh',md:'20vh',lg:'80vh',xl:"73vh"}}>
             <Link to='/'>
                     {/* <Flex align="center" marginLeft={{base:'6rem',md:'10rem',lg:'5rem',xl:"6rem"}} p="3.5rem" mt={{base:'-3rem',md:'0rem',lg:'',xl:"1rem"}} >
                         <img
@@ -108,15 +119,21 @@ const SignUp = () => {
                 </Text>
         </Box>
 
-    <Box  height={{base:'75vh',md:'52vh',lg:'80vh',xl:"70vh"}} mt={{base:'4rem',md:'19.7rem',lg:'3rem',xl:"5rem"}} ml={{base:'rem',md:'-41rem',lg:'0rem',xl:"-3.3rem"}} width={{base:'90vw',md:'80vw',lg:'46vw',xl:"40%"}} bgColor="#EBE9E9" display='flex'> 
+    <Box  height={{base:'75vh',md:'52vh',lg:'80vh',xl:"73vh"}} mt={{base:'4rem',md:'19.7rem',lg:'3rem',xl:"5rem"}} ml={{base:'rem',md:'-41rem',lg:'0rem',xl:"-3.3rem"}} width={{base:'90vw',md:'80vw',lg:'46vw',xl:"40%"}} bgColor="#EBE9E9" display='flex'> 
 
-      <Box maxW={{base:'',md:'',lg:'',xl:"md"}} mx="auto" p={6} bgColor='white' width={{base:'90%',md:'75vw',lg:'40vw',xl:"100%"}} mt={{base:'3rem',md:'',lg:'2rem',xl:"3.5rem"}} mb='8.5rem' ml={{base:'',md:'',lg:'',xl:""}} borderRadius='10px' height={{base:'60vh',md:'40vh',lg:'70vh',xl:"53vh"}}>
-          <Heading as="h2" size="lg" color="" textAlign="center" marginTop="rem">
+      <Box maxW={{base:'',md:'',lg:'',xl:"md"}} mx="auto" p={6} bgColor='white' width={{base:'90%',md:'75vw',lg:'40vw',xl:"100%"}} mt={{base:'3rem',md:'',lg:'2rem',xl:"rem"}} mb='8.5rem' ml={{base:'',md:'',lg:'',xl:""}} borderRadius='10px' height={{base:'60vh',md:'40vh',lg:'70vh',xl:"65vh"}}>
+          <Heading as="h2" size="lg" color="" textAlign="center" marginTop="-1rem">
           Sign Up
           </Heading>
+
+          <Flex>
+            <Avatar size='xl' ml='9.5rem' mt='1rem' name={formData.name}/>
+            <IconButton icon={<EditIcon color='#F52F57'/>} borderRadius='50px' mt='5rem' ml='-1.6rem' zIndex='1' size='sm'/>
+          </Flex>
+
         <form onSubmit={handleSubmit} autoComplete='off'>
           <Stack spacing={4}>
-            <FormControl>
+            <FormControl mt='1rem'>
               <FormLabel fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>Full Name</FormLabel>
               <Input
                 type="text"
@@ -144,19 +161,25 @@ const SignUp = () => {
 
             <FormControl>
               <FormLabel fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>Password</FormLabel>
-              <Input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                required
-                variant="filled"
-                bg="gray.100"
-              />
+              <InputGroup>
+
+                <Input
+                  type={passwordVisible ? 'text' : 'password'}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  required
+                  variant="filled"
+                  bg="gray.100"
+                />
+                <InputRightElement onClick={handlePassword}>
+                  {passwordVisible ? <ViewIcon /> : <ViewOffIcon />}
+                </InputRightElement>
+              </InputGroup>
             </FormControl>
 
           
-            <Button type="submit" colorScheme="#FF859B" variant="solid" mt='1rem' width={{base:'',md:'',lg:'20rem',xl:"26.6vw"}} bgColor="#1B998B" fontSize={{base:'',md:'lg',lg:'',xl:"sm"}} >
+            <Button type="submit" colorScheme="#FF859B" variant="solid" mt='1rem' maxwidth={{base:'',md:'',lg:'20rem',xl:"26.6vw"}} bgColor="#1B998B" fontSize={{base:'',md:'lg',lg:'',xl:"sm"}} >
               Sign Up
             </Button>
             

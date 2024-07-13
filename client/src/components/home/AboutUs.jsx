@@ -76,17 +76,17 @@ const AboutUs = ({properties}) => {
         </Box>
 
         {/* properties display */}
-        <Grid templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)', xl: 'repeat(3, 1fr)' }} gap={{base:'3rem', md:'',lg:'',xl:'5'}} marginLeft={{base:'-1rem', md:'8rem',lg:'9.5rem',xl:'10rem'}} className='prop-card' marginBottom="4rem" marginTop="4rem" width={{base:'', md:'',lg:'60rem',xl:'69rem'}}>
+        <Grid templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)', xl: 'repeat(3, 1fr)' }} gap={{base:'3rem', md:'',lg:'3rem',xl:'5'}} marginLeft={{base:'-1rem', md:'8rem',lg:'9rem',xl:'10rem'}} className='prop-card' marginBottom="4rem" marginTop="4rem" width={{base:'', md:'',lg:'',xl:'69rem'}}>
             {properties.slice(8,12).map((prop) => {
                 return <GridItem key={prop.id}>
-                    <Card width={{base:'19.7rem', md:'30rem',lg:'38rem',xl:'22rem'}} height={{base:'24rem', md:'49rem',lg:'',xl:'28rem'}} className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} >
+                    <Card width={{base:'19.7rem', md:'60rem',lg:'20rem',xl:'22rem'}} height={{base:'24rem', md:'49rem',lg:'',xl:'28rem'}} className='all-cards' borderWidth={'1px'} borderColor={'#EAEBEB'} textAlign={'center'} >
                     <CardBody>
                       <Link to={`/PropertyDetails/${prop.title}`}>
                         <Image
                         src={prop.image_url}
                         alt='Green double couch with wooden legs'
                         borderRadius='lg'
-                        width={{base:'520px', md:'',lg:'',xl:'300px'}}
+                        width={{base:'520px', md:'',lg:'10px',xl:'300px'}}
                         height={{base:'150px', md:'360px',lg:'',xl:'200px'}}
                         objectFit='cover'
                         />

@@ -12,9 +12,13 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
-  Flex
+  Flex,
+  InputGroup,
+  InputRightElement,
+  IconButton
 } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
+import { ViewOffIcon, ViewIcon } from '@chakra-ui/icons';
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +27,14 @@ const SignIn = () => {
   });
   const navigate = useNavigate();
   const [alertStatus, setAlertStaus] = useState(false);
-  const [alertMessage, setalertMessage] = useState('')
+  const [alertMessage, setalertMessage] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+
+  //password visibility
+  const handleShowPassword = () => {
+    setPasswordVisible(!passwordVisible)
+  }
 
   // input change
   const handleInputChange = (e) => {
@@ -146,16 +157,28 @@ const SignIn = () => {
             >
               Password
             </FormLabel>
-            <Input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
-            />
+           <InputGroup>
+              <Input
+                type={passwordVisible ? 'text' : "password"}
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+              />
+
+              <InputRightElement onClick={handleShowPassword}>
+                { passwordVisible ? <ViewIcon /> : <ViewOffIcon />}
+                {/* <IconButton
+                  onClick={handleShowPassword}
+                  icon={passwordVisible ? <ViewIcon /> : <ViewOffIcon /> }
+                /> */}
+              </InputRightElement>
+              
+            </InputGroup>
+            
           </FormControl>
 
-          <Button type="submit" colorScheme="#EF5778" width={{base:'',md:'',lg:'20rem',xl:"25.7vw"  }} mt="1rem" bgColor={'#1B998B'} fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>
+          <Button type="submit" colorScheme="#EF5778" maxwidth={{base:'',md:'',lg:'15rem',xl:"25.7vw"  }} mt="1rem" bgColor={'#1B998B'} fontSize={{base:'',md:'lg',lg:'',xl:"sm"}}>
             Sign In
           </Button>
 

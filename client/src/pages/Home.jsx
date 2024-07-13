@@ -22,7 +22,7 @@ const Home = ({properties}) => {
       minHeight={{base:'70vh', sm:'', md:'120vh',lg:'130vh', xl:'70vh'}}
       className='home-image'
       // filter="brightness(50%)"
-      width={{base:'105vw', sm:'', md:'237vw',lg:'201.5vw', xl:'100vw'}}  
+      width={{base:'105vw', sm:'', md:'237vw',lg:'202vw', xl:'100vw'}}  
     >
 
       {/* Background image layer */}
@@ -39,7 +39,7 @@ const Home = ({properties}) => {
       /> */}
 
        {/* Welcome message */}
-       <Box p={{base:'1.5', md:'7',lg:'4',xl:'2'}} className='welcome-text' mt={{base:'7rem', md:'28rem',lg:'14rem',xl:'10rem'}} mb="8rem" textAlign={'center'} color='' bgColor='white' borderRadius='10px' ml={{base:'5.5rem', md:'40rem',lg:'47rem',xl:'35rem'}} width={{base:'60vw', md:'80vw',lg:'30%',xl:'30vw'}} height={{base:'30vh', md:'38vh',lg:'48vh',xl:'30vh'}}>
+       <Box p={{base:'1.5', md:'7',lg:'4',xl:'2'}} className='welcome-text' mt={{base:'7rem', md:'28rem',lg:'14rem',xl:'10rem'}} mb="8rem" textAlign={'center'} color='' bgColor='white' borderRadius='10px' ml={{base:'5.5rem', md:'40rem',lg:'47rem',xl:'35rem'}} width={{base:'60vw', md:'80vw',lg:'30%',xl:'30vw'}} height={{base:'30vh', md:'38vh',lg:'30vh',xl:'30vh'}}>
           <Heading as="h2" size={{base:'md', md:'xl',lg:'xl',xl:'xl'}} mt='1rem' mb='0.5rem' className='welcome'>
               Welcome to PropList!
           </Heading>

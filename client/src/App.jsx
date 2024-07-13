@@ -12,6 +12,7 @@ import Services from './pages/Services';
 import theme from './components/home/Theme';
 import Contact from './pages/Contact';
 import SubmitFormMessage from './components/submitform/SubmitFormMessage';
+import UserProfile from './components/home/UserProfile';
 
 
 function App() {
@@ -58,6 +59,8 @@ function App() {
             <Route path="/PropertyDetails/:title" element={<PropertyDetails properties={properties}/>} />
 
             <Route path="/SubmitFormMessage" element={<SubmitFormMessage />}/>
+
+            <Route path='/UserProfile' element={<UserProfile />} />
 
           </Routes>
         </Box>

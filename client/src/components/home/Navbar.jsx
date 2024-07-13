@@ -1,14 +1,15 @@
 import React from 'react';
-import { Box, Flex, Heading, Button, IconButton, Spacer, useColorMode, Text, useDisclosure,Drawer, DrawerOverlay,DrawerHeader, DrawerContent, DrawerBody, DrawerCloseButton} from '@chakra-ui/react';
+import { Box, Flex, Heading, Button, IconButton, Spacer, useColorMode, Text, useDisclosure,Drawer, DrawerOverlay,DrawerHeader, DrawerContent, DrawerBody, DrawerCloseButton,Avatar} from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FiMoon, FiSun, FiMenu } from 'react-icons/fi';
+import ProfileModal from './ProfileModal';
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     const {isOpen, onOpen, onClose} = useDisclosure();
 
     return (
-        <Box bg="black" color="white" py={2} px={10} w="100%" position="fixed" zIndex="100" top="0" left="0" right="0">
+        <Box bg="black" color="white" py={4} px={10} w="100%" position="fixed" zIndex="100" top="0" left="0" right="0">
             <Flex justify="space-between" align="center">
                 {/* Logo and Title */}
               <Link to='/'>
@@ -48,16 +49,19 @@ const Navbar = () => {
                         </Text>
                     </Link>
                     <Link to="/contact" style={{ textDecoration: 'none' }}>
-                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='contact' _hover={{ color: '#EF5778' }} marginRight="3.8rem" fontSize={{base:'',md:'2rem',lg:'',xl:'1rem'}}>
+                        <Text variant="ghost" color="#white" fontWeight="500" ml={4} className='contact' _hover={{ color: '#EF5778' }} marginRight="3.5rem" fontSize={{base:'',md:'2rem',lg:'',xl:'1rem'}}>
                             Contact
                         </Text>
                     </Link>
 
+                    {/* <Avatar mr='0.5rem' size='md'/> */}
+                    <ProfileModal />
+
                     {/* Spacer to add space between links and buttons */}
-                    <Spacer />
+                    {/* <Spacer /> */}
 
                     {/* Dark Mode Toggle Button */}
-                    <IconButton
+                    {/* <IconButton
                         aria-label="Toggle dark mode"
                         icon={colorMode === 'dark' ? <FiSun /> : <FiMoon />}
                         variant="ghost"
@@ -66,7 +70,7 @@ const Navbar = () => {
                         onClick={toggleColorMode}
                         _hover={{ color : "#EF5778" }}
                         className='toggle'
-                    />
+                    /> */}
                 </Flex>
 
                     {/* Hamburger menu for smaller screens */}
